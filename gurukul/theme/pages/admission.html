@@ -1,19 +1,20 @@
 {% include "common/header.html" %}
 {% include "common/top-navigation.html" %}
 {% load static %}
-<header>
+    <header>
         <div class="header" style="background: url(../assets/img/about-banner.jpg);">
             <div class="container">
                 <div class="navigation">
                     <div>
                         <div class="brand">
-                            <a href="#!"><img src="{% static 'img/logo.svg' %}" alt="" style="max-width: 150px;"></a>
+                            <a href="{% url 'home' %}"><img src="{% static 'img/logo.svg' %}" alt="" style="max-width: 150px;"></a>
                         </div>
                         {% include 'common/nav.html' %}
                     </div>
                 </div>
                 <div class="header-content text-center">
-                    <h1>Fostering Spiritual Development through Education</h1>
+                    <h1>  Welcome to Gurukul's Admission Journey! 
+                        Unlocking Knowledge, Embracing Tradition </h1>
                 </div>
             </div>
 
@@ -21,36 +22,188 @@
     </header>
 
 
-    <div class="admission-section" style="background: #FFEFE3;">
-        <div class="container">
-            <div class="admission-inner text-center">
-                <h2>Admission Guidelines</h2>
-                <h4>Admission Entry Level – Class: 6th to 12th </h4>
-                <h4>Stream Offered (11th & 12th): PCM, PCB, Commerce </h4>
+    <div class="admission-page pt-5 pb-5" style="background: #FFEFE3;">
+        <div class="admission-section">
+            <div class="container">
+                <div class="admission-inner text-center">
+                    <h2>Admission Guidelines</h2>
+                    <h4>Admission Entry Level – Class: 6th to 12th </h4>
+                    <h4>Stream Offered (11th & 12th): PCM, PCB, Commerce </h4>
+                </div>
+
+                <div class="common-heading admission-list mt-5">
+                    <h2 class="mb-4">Required Documents</h2>
+                    <ul style="padding: 0px;">
+                        <li>Copy of the student date of birth certificate</li>
+                        <li>Student's Aadhaar Certificate</li>
+                        <li>School Progress Report/Marksheet</li>
+                    </ul>
+                    <ul style="padding: 0px;">
+                        <li>Give a Health certificate from a certified medical practitioner</li>
+                        <li>3 Recent/contemporary passport size photographs</li>
+                    </ul>
+                </div>
+
+                <div class="common-heading mt-4">
+                    <h2 class="mb-4">Gurukul Admission Methodology</h2>
+                    <p>After the primary selection through the viva test, there will be a further two-stage admission
+                        process. Second stage- test inspection. Third phase – Final admission. This process is given
+                        below. 
+                    </p>
+                </div>
+
+                <div class="examination-list mt-5">
+                    <h3><span>1</span>Oral Examination</h3>
+                    <p>We held a viva oral examination for the students who live far away from the school via online
+                        mode. School teachers will conduct viva through video calls on WhatsApp or Telegram (preferably
+                        on Telegram). All you need is a mobile phone, wearing earphones.</p>
+
+                    <p>Students from nearby districts like Mathura, Delhi, Agra, Bharatpur, Mathura, etc., can come
+                        directly to the school and give a viva test. The online oral test is not required for them. 
+                    </p>
+
+                    <p>Be prepared for viva examinations with your date of birth, gotra, private, and the type of
+                        Brahmin you are (i.e., Kanyakubj, Sharayupari, Gangapari, etc.).</p>
+                </div>
+                <div class="examination-list mt-5">
+                    <h3><span style="padding: 15px 26px;">2</span>Trial Phase</h3>
+                    <p>Because neither the parents nor the students have seen the school, students will be given 15 to
+                        60 days (about 2 months) of experience at Gurukul to understand the school. (There will be no
+                        charges during this inspection period.)</p>
+
+                    <p>
+                        This phase is created after keeping the students in mind as some students do not want to stay
+                        away from home, come back, and keep crying.
+                    </p>
+
+                    <p>So, we conduct this trial to check </p>
+                    <ul class="pt-2">
+                        <li>The ability of the student to learn</li>
+                        <li> Whether the student has a strong desire to study</li>
+                        <li> Whether he shows readiness to study</li>
+                        <li> How is his behavior</li>
+                        <li> Whether he can live together with other students in the hostel</li>
+                    </ul>
+                    <p>The student has to continue in the school till the 12th standard, following the traditional
+                        celibate vow. So, we observe their favorable mentality and capability for such a long stay
+                        through tests and inspection.</p>
+
+                    <p> Also, parents share with everyone that their son is at Gurukul for further education, but if
+                        for
+                        some reason, the child did not like the school, could not stay, or does not want to stay, then
+                        the final approval is not given by the school, then the child returns home. So, this inspection
+                        can save you from the situation of humiliation, avoiding any publicity while sending the child
+                        to the school for preliminary test inspection.</p>
+
+                    <p> To see some Sanskrit education and culture and to see the school, the child has been sent to
+                        Ved
+                        Vidyalaya to see the possibility of admission. - It would be enough to say this much, which is
+                        also true.</p>
+
+                    <p> At the time of test inspection, the student will be given specified readings on the basis of
+                        which he will be tested.</p>
+                </div>
+                <div class="examination-list mt-5">
+                    <h3><span style="padding: 15px 26px;">3</span>Trial Phase</h3>
+                    <p>The third is Gurukul joining phase for the student who has passed the second phase. </p>
+
+                    <p>
+                        Students will receive traditional clothes, copper food utensils, books, study materials,
+                        garlands for worship rituals, etc., in the school, charged Rs.4000/-.
+                    </p>
+                    <p>It is a security amount as all this financial expenditure goes in vain if the student returns
+                        home after a few days because most of these things cannot be given to others and are
+                        discarded/thrown.</p>
+
+                    <p>All the hard work & financial expenditure on the child for so many days go in vain if the student
+                        goes home after all the tests and inspections for reasons like those shared below.</p>
+                    <ul class="pt-2">
+                        <li>Because of students' own arbitrariness.</li>
+                        <li>Unable to live after being separated from home.</li>
+                        <li>In case the family members are also unable to leave the student.</li>
+                        <li>Because of the strange behavior of the student</li>
+                        <li>By not putting his mind to the study for which the child has come to the school</li>
+                        <li>Due to not making necessary progress in studies - if the student goes home for such reasons,
+                            parents take him home, or he is sent home by the school.</li>
+                    </ul>
+                    <p>
+                        As a precaution in such situations, parents have to deposit a security amount of 20k in advance,
+                        which is fully refundable after the student completes his studies. 
+                    </p>
+                </div>
+
+
             </div>
-
-            <div class="common-heading admission-list mt-5">
-                <h2 class="mb-5">Required Documents</h2>
-                <ul style="padding: 0px;">
-                    <li>Copy of the student date of birth certificate</li>
-                    <li>Student's Aadhaar Certificate</li>
-                    <li>School Progress Report/Marksheet</li>
-                </ul>
-                <ul style="padding: 0px;">
-                    <li>Give a Health certificate from a certified medical practitioner</li>
-                    <li>3 Recent/contemporary passport size photographs</li>
-                </ul>
-            </div>
-
-
         </div>
     </div>
-{% include "common/footer.html" %}
 
+    <div class="apply-section">
+        <div class="container">
+            <h2 class="mb-3">Admission Open, Apply Today!</h2>
+            <h5 style="color: #fff;font-weight: 500;">Fill the form with the required information & get started with
+                divine journey for
+                your kid.</h5>
+            <a href="admission-form" class="yellow-btn mt-4">Admission Form</a>
+        </div>
 
+    </div>
 
-   
-
-
-
-    
+    <div class="contact-form" style="background:#FFEFE3 ;padding: 50px 0px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-lg-4 col-sm-12">
+                    <div class="contact-form-detail text-center">
+                        <div style="margin: 0 auto; max-width: 320px;">
+                            <span><i class="bi bi-geo-alt-fill"></i></span>
+                            <p style="font-size: 16px;padding-bottom: 10px;">Maluka Ved Vidyalaya, Shri Jadkhor Godham, Via-Pahalwara, Post- G</p>
+                            <!-- <p style="font-size: 16px;">Lorem ipsum dolor sit amet, consect etur adi pisicing elit</p> -->
+                        </div>
+                        <div class="mt-5 mb-5">
+                            <span><i class="bi bi-telephone-fill"></i></span>
+                            <a href="#">+91 8619207496</a>
+                            <a href="#">+91 8000450479</a>
+                        </div>
+                        <div>
+                            <span><i class="bi bi-envelope-fill"></i></span>
+                            <a href="#">sgbveda@gmail.com</a>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 col-lg-8 col-sm-12">
+                    <div class="contact-form-input">
+                        <h3 style="color: #800000;text-transform: uppercase;">Get In Touch</h3>
+                        <p style="max-width: 780px;margin: 20px 0px;">Connect with us today and embark
+                            on a transformative journey. Contact us to learn more about our programs,
+                            admissions, and the enriching opportunities that await you. Let's start your
+                            path to growth and enlightenment together. </p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="First Name" aria-label="First name"
+                                    name="firstname">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Last Name" aria-label="Last name"
+                                    name="lastname">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="number" type="tel" class="form-control" name="email"
+                                    placeholder="Your Email">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="number" type="tel" id="phone-input" class="form-control" name="number">
+                            </div>
+                            <div class="col-md-12 mb-3">
+                                <textarea class="form-control" placeholder="Message" id="exampleFormControlTextarea1"
+                                    rows="5"></textarea>
+                            </div>
+                            <div class="col-md-12">
+                                <a href="" class="yellow-btn red-btn">Submit</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include "common/footer.html" %}

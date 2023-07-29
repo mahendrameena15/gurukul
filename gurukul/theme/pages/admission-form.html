@@ -3,25 +3,19 @@
 {% load static %}
 
 <header>
-    <div class="header">
+    <div class="header" style="background: url(../assets/img/about-banner.jpg);">
         <div class="container">
             <div class="navigation">
                 <div>
                     <div class="brand">
-                        <a href="#!"><img src="{% static 'img/logo.svg' %}" alt="" style="max-width: 150px;"></a>
+                        <a href="{% url 'home' %}"><img src="{% static 'img/logo.svg' %}" alt="" style="max-width: 150px;"></a>
                     </div>
                     {% include 'common/nav.html' %}
                 </div>
             </div>
             <div class="header-content text-center">
-                <h1>Fostering Spiritual Development through Education</h1>
-                <p style="color: #fff;max-width: 700px;margin: 0 auto;padding: 15px 0px;">Discover the Path of
-                    Wisdom and Transformation at GurukulDiscover the Path of Wisdom and Transformation at Gurukul
-                </p>
-                <div class="banner-btn justify-content-between d-flex mt-3" style="width: 40%;margin: 0 auto;">
-                    <a href="contact-us" class="yellow-btn">Contact us</a>
-                    <a href="admission-form" class="white-btn">Admission Form</a>
-                </div>
+                <h1>  Welcome to Gurukul's Admission Journey! 
+                    Unlocking Knowledge, Embracing Tradition </h1>
             </div>
         </div>
 

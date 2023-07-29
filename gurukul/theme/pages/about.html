@@ -2,25 +2,23 @@
 {% include "common/top-navigation.html" %}
 {% load static %}
 <header>
-    <div class="header">
+    <div class="header" style="background: url(../assets/img/about-banner.jpg);">
         <div class="container">
             <div class="navigation">
                 <div>
                     <div class="brand">
-                        <a href="#"><img src="{% static 'img/logo.svg' %}" alt="" style="max-width: 150px;"></a>
+                        <a href="{% url 'home' %}"><img src="{% static 'img/logo.svg' %}" alt="" style="max-width: 150px;"></a>
                     </div>
                     {% include 'common/nav.html' %}
                 </div>
             </div>
             <div class="header-content text-center">
-                <h1>Fostering Spiritual Development through Education</h1>
-                <p style="color: #fff;max-width: 700px;margin: 0 auto;padding: 15px 0px;">Discover the Path of
-                    Wisdom and Transformation at GurukulDiscover the Path of Wisdom and Transformation at Gurukul
-                </p>
-                <div class="banner-btn justify-content-between d-flex mt-3" style="width: 40%;margin: 0 auto;">
+                <h1>Welcome to Gurukul</h1>
+                <p style="color: #fff;max-width: 700px;font-size:24px; margin: 0 auto;padding: 15px 0px;">Unveiling a Sanctuary of Knowledge and Enlightenment</p>
+                <!-- <div class="banner-btn justify-content-between d-flex mt-3" style="width: 40%;margin: 0 auto;">
                     <a href="contact-us" class="yellow-btn">Contact us</a>
                     <a href="admission-form" class="white-btn">Admission Form</a>
-                </div>
+                </div> -->
             </div>
         </div>
 
@@ -366,21 +364,18 @@
                                     <div class="contact-form-detail text-center">
                                         <div style="margin: 0 auto; max-width: 320px;">
                                             <span><i class="bi bi-geo-alt-fill"></i></span>
-                                            <p style="font-size: 16px;padding-bottom: 10px;">Lorem ipsum dolor sit
-                                                amet, consect etur
-                                                adi pisicing elit</p>
-                                            <p style="font-size: 16px;">Lorem ipsum dolor sit amet, consect etur adi
-                                                pisicing elit</p>
+                                            <p style="font-size: 16px;padding-bottom: 10px;">Maluka Ved Vidyalaya, Shri Jadkhor Godham, Via-Pahalwara, Post- G</p>
+                                            
                                         </div>
                                         <div class="mt-5 mb-5">
                                             <span><i class="bi bi-telephone-fill"></i></span>
-                                            <a href="#">+91 012 345 6789</a>
-                                            <a href="#">+91 012 345 6789</a>
+                                            <a href="#">+91 8619207496</a>
+                                            <a href="#">+91 8000450479</a>
                                         </div>
                                         <div>
                                             <span><i class="bi bi-envelope-fill"></i></span>
-                                            <a href="#">example@gmail.com</a>
-                                            <a href="#">example@gmail.com</a>
+                                            <a href="#">sgbveda@gmail.com</a>
+                                            
                                         </div>
                                     </div>
                                 </div>

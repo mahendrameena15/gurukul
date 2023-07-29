@@ -700,8 +700,9 @@ nav ul li ul li a {
     position: relative;
 }
 
-.wrapper {
+.contact-form-inner {
     width: 100%;
+    margin: 0 auto;
 }
 
 .dbox {
@@ -736,14 +737,13 @@ nav ul li ul li a {
     color: #000000;
 }
 
-.contact-wrap {
+.contact-form-inner .contact-wrap {
     background: #fff;
-    box-shadow: 0 10px 16px 1px rgba(174, 199, 251, 1);
     border-radius: 10px;
 
 }
 
-.contact-wrap label {
+.contact-form-inner .contact-wrap label {
     font-weight: 600;
     font-size: 16px;
     line-height: 32px;
@@ -751,17 +751,17 @@ nav ul li ul li a {
     font-weight: 600;
 }
 
-.contact-wrap input {
+.contact-form-inner .contact-wrap input {
     padding: 5px;
     border: 1px solid #c6c6c6;
 }
 
-.contact-wrap {
+.contact-form-inner .contact-wrap {
     max-width: 850px;
     margin: 0 auto;
 }
 
-.wrapper a {
+.contact-form-inner a {
     text-decoration: none;
     color: #800000;
 }

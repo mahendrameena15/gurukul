@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-ad(bc)#el)@skx_%(ravc%c#4hwkc$2h4-!nbf=q+jf0#f%zz1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -79,9 +79,9 @@ WSGI_APPLICATION = 'gurukul.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'gurukuldb',
-        'USER': 'gurukuluser',
-        'PASSWORD': 'P@ssw0rd@123##',
+        'NAME': 'gurukul_db',
+        'USER': 'root',
+        'PASSWORD': '',
         'HOST': 'localhost',  # Change this to your MySQL server's host if needed
         'PORT': '3306',  
             # Set the port number if your MySQL server is running on a non-default port

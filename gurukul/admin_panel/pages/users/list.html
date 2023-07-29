@@ -4,6 +4,86 @@
 
 {% block content %}
   
-<h1>Users List</h1>
-  
+
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title"></h3>
+              </div>
+              <!-- /.card-header -->
+            <form method="GET" action="all-users">
+             {% for x in user_list %}
+              <div class="card-body">
+                <table id="example2" class="table table-bordered table-hover">
+                  <thead>
+                  <tr>
+                    <th>Id</th>
+                    <th>Student Name</th>
+                    <th>Parent Name</th>
+                    <th>DOB</th>
+                    <th>Email</th>
+                    <th>State</th>
+                    <th>District</th>
+                    <th>Address</th>
+                    <th>Phone No.</th>
+                    <th>Class Passesd in 2023</th>
+                    <th>Percentage Scored</th>
+                    <th>Language Medium</th>
+                    <th>Reason For Choice</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>x.id</td>
+                    <td>x.student_name</td>
+                    <td>x.parent_name</td>
+                    <td>x.date_of_birth</td>
+                    <td>x.email</td>
+                    <td>x.state</td>
+                    <td>x.district</td>
+                    <td>x.address</td>
+                    <td>x.phone_number</td>
+                    <td>x.class_passesd_in_2023</td>
+                    <td>x.percentage_scored</td>
+                    <td>x.language_medium</td>
+                    <td>x.reason_for_choice</td>
+                  </tr> 
+                  </tbody>
+                  <!-- <tfoot>
+                  <tr>
+                    <th>Rendering engine</th>
+                    <th>Browser</th>
+                    <th>Platform(s)</th>
+                    <th>Engine version</th>
+                    <th>CSS grade</th>
+                  </tr>
+                  </tfoot> -->
+                </table>
+              </div>
+              {% endfor %} 
+            </form>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+ 
+  <!-- /.content-wrapper -->
+    
 {% endblock %}
+ 
+
+
+
+

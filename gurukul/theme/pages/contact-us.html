@@ -2,36 +2,29 @@
 {% include "common/top-navigation.html" %}
 {% load static %}
 <header>
-        <div class="header">
-            <div class="container">
-                <div class="navigation">
-                    <div>
-                        <div class="brand">
-                            <a href="#!"><img src="{% static 'img/logo.svg' %}" alt="" style="max-width: 150px;"></a>
-                        </div>
-                        {% include 'common/nav.html' %}
+    <div class="header" style="background: url(../assets/img/about-banner.jpg);">
+        <div class="container">
+            <div class="navigation">
+                <div>
+                    <div class="brand">
+                        <a href="{% url 'home' %}"><img src="{% static 'img/logo.svg' %}" alt="" style="max-width: 150px;"></a>
                     </div>
-                </div>
-                <div class="header-content text-center">
-                    <h1>Fostering Spiritual Development through Education</h1>
-                    <p style="color: #fff;max-width: 700px;margin: 0 auto;padding: 15px 0px;">Discover the Path of
-                        Wisdom and Transformation at GurukulDiscover the Path of Wisdom and Transformation at Gurukul
-                    </p>
-                    <div class="banner-btn justify-content-between d-flex mt-3" style="width: 40%;margin: 0 auto;">
-                        <a href="contact-us" class="yellow-btn">Contact us</a>
-                        <a href="admission-form" class="white-btn">Admission Form</a>
-                    </div>
+                    {% include 'common/nav.html' %}
                 </div>
             </div>
-
+            <div class="header-content text-center">
+                <h1>  Contact Us </h1>
+            </div>
         </div>
-    </header>
+
+    </div>
+</header>
 
     <section class="ftco-section" style=" background: #FFEFE3;">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-12">
-                    <div class="wrapper px-md-4">
+                    <div class="contact-form-inner px-md-4">
                         <div class="row mb-4">
                             <div class="col-md-3">
                                 <div class="dbox w-100 text-center">
@@ -39,7 +32,7 @@
                                         <span><i class="bi bi-geo-alt-fill"></i></span>
                                     </div>
                                     <div class="text">
-                                        <p><span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
+                                        <p><span>Address:</span> Maluka Ved Vidyalaya, Shri Jadkhor Godham, Via-Pahalwara, Post- G</p>
                                     </div>
                                 </div>
                             </div>
@@ -49,7 +42,7 @@
                                         <span><i class="bi bi-telephone-fill"></i></span>
                                     </div>
                                     <div class="text">
-                                        <p><span>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
+                                        <p><span>Phone:</span> <a href="tel:+91 8619207496">+91 8619207496</a></p>
                                     </div>
                                 </div>
                             </div>
