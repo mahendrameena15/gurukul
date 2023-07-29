@@ -1,0 +1,95 @@
+
+{% include "common/header.html" %}
+{% include "common/top-navigation.html" %}
+{% load static %}
+
+
+<style>
+    .page_404 {
+        padding: 40px 0;
+        font-family: 'Arvo', serif;
+        background: #fff;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .page_404 img {
+        width: 100%;
+    }
+
+    .four_zero_four_bg h1 {
+        font-size: 200px;
+        color: #2d2c2c;
+
+    }
+
+    .four_zero_four_bg h3 {
+        font-size: 80px;
+    }
+
+    .link_404 {
+        color: #fff !important;
+        padding: 10px 20px;
+        background: #ff8d02;
+        margin: 20px 0;
+        display: inline-block;
+    }
+
+    .contant_box_404 {
+        margin-top: 70px;
+    }
+</style>
+    <header>
+        <div class="header" style="background: url(../assets/img/about-banner.jpg);min-height: 400px;">
+            <div class="container">
+                <div class="navigation">
+                    <div>
+                        <div class="brand">
+                            <a href="#!"><img src="{% static 'img/logo.svg' %}" alt="" style="max-width: 150px;"></a>
+                        </div>
+                        {% include 'common/nav.html' %}
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </header>
+
+
+
+    <div class="class-routine common-bg common-padding">
+        <div class="container">
+            <div class="404-page">
+                <section class="page_404">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 ">
+                                <div class=" text-center">
+                                    <div class="four_zero_four_bg mt-5">
+                                        <h1 class="text-center ">404</h1>
+                                    </div>
+
+                                    <div class="contant_box_404">
+                                        <h3 class="h2">
+                                            Look like you're lost
+                                        </h3>
+
+                                        <p>the page you are looking for not available!</p>
+
+                                        <a href="" class="yellow-btn red-btn mt-4">Go to Home</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+{% include "common/footer.html" %}
+ 
+
+
+
+    

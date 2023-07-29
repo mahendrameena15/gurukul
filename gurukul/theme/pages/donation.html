@@ -1,0 +1,99 @@
+{% include "common/header.html" %}
+{% include "common/top-navigation.html" %}
+{% load static %}
+    <header>
+        <div class="header" style="background: url(../assets/img/about-banner.jpg);">
+            <div class="container">
+                <div class="navigation">
+                    <div>
+                        <div class="brand">
+                            <a href="#!"><img src="{% static 'img/logo.svg' %}" alt="" style="max-width: 150px;"></a>
+                        </div>
+                      {% include 'common/nav.html' %}
+                    </div>
+                </div>
+                <div class="header-content text-center" style="padding: 80px 0px;">
+                    <h1>Your Contribution Can Give a Spiritual, Ethical, & Academic Life to a Student! </h1>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <div class="donation-page" style="background: #FFEFE3;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-lg-8 col-sm-12">
+                    <div class="donation-content">
+                        <h5>Dear well-wishers,</h5>
+                        <p>Mukul Veda Vidyalaya is a free gurukul offering spiritual, ethical, and academic education
+                            funded by devotees to the Organizational Trust of Shri Golok Vrindavan and Malukpeeth Seva
+                            Sansthan Trust, Vrindavan, for social welfare.
+                        </p>
+                        <p>We invite supporters to contribute to this noble cause, providing a holistic education that
+                            nurtures students' spiritual growth, instills ethical values, and fosters academic
+                            excellence. The Gurukul aims to shape responsible individuals who positively impact society.
+                            Donations sustain the institution and help create a nurturing environment for students to
+                            flourish intellectually, morally, and spiritually.
+                        </p>
+                        <p>Supporters' involvement is crucial in empowering the next generation of compassionate
+                            leaders. Kindly contact the Phone Number given below for More Information.
+                        </p>
+
+
+                        <div class="mt-4">
+                            <ul>
+                                <li><b>Tax exemption details</b></li>
+                                <li><b>Contact Us:</b></li>
+                                <li><b>Email Id:</b></li>
+                                <li><b>Mobile Number:</b></li>
+                            </ul>
+                        </div>
+                        <p class="mt-4"><b>Terms & Conditions:</b> You agree to share the information entered on this
+                            page with Mukul
+                            Ved
+                            Vidyalaya (owner of this page) and Payment Gateway, adhering to applicable laws.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-4 col-sm-12">
+                    <div class="donation-form">
+                        <form class="row g-3">
+                            <div class="col-md-6">
+                                <label for="inputName" class="form-label">Full Name</label>
+                                <input type="text" name="full_name" class="form-control" id="inputName">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputEmail4" class="form-label">Email</label>
+                                <input type="email" name="email" class="form-control" id="inputEmail4">
+                            </div>
+                            <div class="col-md-12">
+                                <label for="inputAddress" class="form-label">Address</label>
+                                <input type="text" class="form-control" name="address" id="inputAddress" placeholder="">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputPhone" class="form-label">Phone Number</label>
+                                <input type="number" class="form-control" id="inputPhone" placeholder="">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputPan" class="form-label">PAN Number</label>
+                                <input type="text" name="pan_number" class="form-control" id="inputPan">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputPayment" class="form-label">Payment Details</label>
+                                <input type="text" class="form-control" id="inputPayment">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputDonation" class="form-label">Donation Amount</label>
+                                <input type="number" class="form-control" id="inputDonation">
+                            </div>
+                            <div class="col-12 mt-4 text-end">
+                                <button type="submit" class="yellow-btn red-btn w-100">Donate Now</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% include "common/footer.html" %}

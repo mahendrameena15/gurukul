@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Thank You!</title>
+<!-- <link rel="stylesheet" type="text/css" href="../assets/css/style.css"> -->
+</head>
+<style>
+    body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.message {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    text-align: center;
+}
+
+h1 {
+    color: #007bff;
+}
+
+p {
+    color: #444;
+    margin-top: 10px;
+}
+/* Optional: Add responsive styles */
+@media (max-width: 600px) {
+    .message {
+        padding: 20px;
+    }
+} 
+</style>
+<body>
+<div class="container">
+<div class="message">
+<h1>Thank You!</h1>
+        <p>Your form has been successfully submitted.</p>
+        <!-- <p>Registration Id: {{ id }}</p> -->
+        <p>Name: {{ data.student_name }}</p> 
+        <p>Parent's Name: {{ data.parent_name }}</p> 
+        <p>Date of Birth: {{ data.date_of_birth }}</p> 
+        <p>Email: {{ data.email }}</p> 
+        <p>State: {{ data.state }}</p> 
+        <p>District: {{ data.district }}</p> 
+        <p>Address: {{ data.address }}</p> 
+        <p>Phone Number: {{ data.phone_number }}</p> 
+        <p>Class Passed in 2023: {{ data.class_passed_in_2023 }}</p> 
+        <p>Percentage Scored: {{ data.percentage_scored }}</p> 
+        <p>Language Medium: {{ data.language_medium }}</p> 
+        <p>Reason for Choice: {{ data.reason_for_choice }}</p> 
+</div>
+</div>
+</body>
+</html>

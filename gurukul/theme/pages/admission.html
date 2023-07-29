@@ -1,0 +1,56 @@
+{% include "common/header.html" %}
+{% include "common/top-navigation.html" %}
+{% load static %}
+<header>
+        <div class="header" style="background: url(../assets/img/about-banner.jpg);">
+            <div class="container">
+                <div class="navigation">
+                    <div>
+                        <div class="brand">
+                            <a href="#!"><img src="{% static 'img/logo.svg' %}" alt="" style="max-width: 150px;"></a>
+                        </div>
+                        {% include 'common/nav.html' %}
+                    </div>
+                </div>
+                <div class="header-content text-center">
+                    <h1>Fostering Spiritual Development through Education</h1>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+
+    <div class="admission-section" style="background: #FFEFE3;">
+        <div class="container">
+            <div class="admission-inner text-center">
+                <h2>Admission Guidelines</h2>
+                <h4>Admission Entry Level – Class: 6th to 12th </h4>
+                <h4>Stream Offered (11th & 12th): PCM, PCB, Commerce </h4>
+            </div>
+
+            <div class="common-heading admission-list mt-5">
+                <h2 class="mb-5">Required Documents</h2>
+                <ul style="padding: 0px;">
+                    <li>Copy of the student date of birth certificate</li>
+                    <li>Student's Aadhaar Certificate</li>
+                    <li>School Progress Report/Marksheet</li>
+                </ul>
+                <ul style="padding: 0px;">
+                    <li>Give a Health certificate from a certified medical practitioner</li>
+                    <li>3 Recent/contemporary passport size photographs</li>
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+{% include "common/footer.html" %}
+
+
+
+   
+
+
+
+    

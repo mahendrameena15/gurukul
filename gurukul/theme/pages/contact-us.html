@@ -1,0 +1,171 @@
+{% include "common/header.html" %}
+{% include "common/top-navigation.html" %}
+{% load static %}
+<header>
+        <div class="header">
+            <div class="container">
+                <div class="navigation">
+                    <div>
+                        <div class="brand">
+                            <a href="#!"><img src="{% static 'img/logo.svg' %}" alt="" style="max-width: 150px;"></a>
+                        </div>
+                        {% include 'common/nav.html' %}
+                    </div>
+                </div>
+                <div class="header-content text-center">
+                    <h1>Fostering Spiritual Development through Education</h1>
+                    <p style="color: #fff;max-width: 700px;margin: 0 auto;padding: 15px 0px;">Discover the Path of
+                        Wisdom and Transformation at GurukulDiscover the Path of Wisdom and Transformation at Gurukul
+                    </p>
+                    <div class="banner-btn justify-content-between d-flex mt-3" style="width: 40%;margin: 0 auto;">
+                        <a href="contact-us" class="yellow-btn">Contact us</a>
+                        <a href="admission-form" class="white-btn">Admission Form</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <section class="ftco-section" style=" background: #FFEFE3;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-12">
+                    <div class="wrapper px-md-4">
+                        <div class="row mb-4">
+                            <div class="col-md-3">
+                                <div class="dbox w-100 text-center">
+                                    <div class="icon d-flex align-items-center justify-content-center">
+                                        <span><i class="bi bi-geo-alt-fill"></i></span>
+                                    </div>
+                                    <div class="text">
+                                        <p><span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="dbox w-100 text-center">
+                                    <div class="icon d-flex align-items-center justify-content-center">
+                                        <span><i class="bi bi-telephone-fill"></i></span>
+                                    </div>
+                                    <div class="text">
+                                        <p><span>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="dbox w-100 text-center">
+                                    <div class="icon d-flex align-items-center justify-content-center">
+                                        <span><i class="bi bi-send-fill"></i></span>
+                                    </div>
+                                    <div class="text">
+                                        <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="dbox w-100 text-center">
+                                    <div class="icon d-flex align-items-center justify-content-center">
+                                        <span><i class="bi bi-globe-asia-australia"></i></span>
+                                    </div>
+                                    <div class="text">
+                                        <p><span>Website</span> <a href="#">yoursite.com</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="contact-wrap w-100 p-md-5 p-4">
+                                    <h2 class="mb-4 text-center" style="color: #710101;">Contact Us</h2>
+                                    <form method="POST" action="contact_us_view" id="contactForm" name="contactForm" class="contactForm">
+                                        {% csrf_token %}
+                                        <div class="row">
+                                            <div class="col-md-6 mb-4">
+                                                <div class="form-group">
+                                                    <label class="label" for="name">First Name</label>
+                                                    <input type="text" class="form-control" name="first_name" id="firstname"
+                                                        placeholder="" value = "{{ form.cleaned_data.first_name }}" />
+                                                        {% if form.first_name.errors %}
+                                                            <div class="error-message">
+                                                                {% for error in form.first_name.errors %}
+                                                                    <span>{{ error }}</span>
+                                                                {% endfor %}
+                                                            </div>
+                                                        {% endif %}
+                                    
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-4">
+                                                <div class="form-group">
+                                                    <label class="label" for="name">Last Name</label>
+                                                    <input type="text" class="form-control" name="last_name"
+                                                        id="lastname" placeholder=""  value = "{{ form.cleaned_data.last_name }}">
+                                                        {% if form.last_name.errors %}
+                                                        <div class="error-message">
+                                                            {% for error in form.last_name.errors %}
+                                                                <span>{{ error }}</span>
+                                                            {% endfor %}
+                                                        </div>
+                                                        {% endif %}
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-4">
+                                                <div class="form-group">
+                                                    <label class="label" for="email">Email Address</label>
+                                                    <input type="email" class="form-control" name="email" id="email"
+                                                        placeholder=""  value = "{{ form.cleaned_data.email }}">
+                                                        {% if form.email.errors %}
+                                                        <div class="error-message">
+                                                            {% for error in form.email.errors %}
+                                                                <span>{{ error }}</span>
+                                                            {% endfor %}
+                                                        </div>
+                                                        {% endif %}
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-4">
+                                                <div class="form-group">
+                                                    <label class="label" for="subject">Phone Number</label>
+                                                    <input type="text" class="form-control" name="phone_number"
+                                                        id="phonenumber" placeholder="" value = "{{ form.cleaned_data.phone_number }}">
+                                                        {% if form.phone_number.errors %}
+                                                        <div class="error-message">
+                                                            {% for error in form.phone_number.errors %}
+                                                                <span>{{ error }}</span>
+                                                            {% endfor %}
+                                                        </div>
+                                                        {% endif %}
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 mb-4">
+                                                <div class="form-group">
+                                                    <label class="label" for="#">Message</label>
+                                                    <textarea name="message" class="form-control" id="message" cols="60"
+                                                        rows="6" placeholder="" value = "{{ form.cleaned_data.message }}"></textarea>
+                                                        {% if form.message.errors %}
+                                                        <div class="error-message">
+                                                            {% for error in form.message.errors %}
+                                                                <span>{{ error }}</span>
+                                                            {% endfor %}
+                                                        </div>
+                                                        {% endif %}
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <button class="yellow-btn red-btn">Submit</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% include "common/footer.html" %}

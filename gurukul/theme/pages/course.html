@@ -1,0 +1,77 @@
+{% include "common/header.html" %}
+{% include "common/top-navigation.html" %}
+{% load static %}
+     <header>
+         <div class="header" style="background: url(../assets/img/about-banner.jpg);">
+             <div class="container">
+                 <div class="navigation">
+                     <div>
+                         <div class="brand">
+                             <a href="#!"><img src="{% static 'img/logo.svg' %}" alt="" style="max-width: 150px;"></a>
+                         </div>
+                         {% include 'common/nav.html' %}
+                     </div>
+                 </div>
+                 <div class="header-content text-center">
+                     <h1>Fostering Spiritual Development through Education</h1>
+                 </div>
+             </div>
+
+         </div>
+     </header>
+
+     <div class="course-page mt-5 mb-5">
+         <div class="container">
+             <div class="row row-cols-1 row-cols-md-3 g-4">
+                 <div class="col">
+                     <div class="card h-100">
+                         <div class="image-box">
+                             <img src="{% static 'img/DSC_4456.JPG' %}" class="card-img-top" alt="...">
+                         </div>
+                         <div class="card-body">
+                             <h5 class="card-title">Complete Trello Beginners to Advanced</h5>
+                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in
+                                 to
+                                 additional content. This content is a little bit longer.</p>
+                         </div>
+                         <div class="card-footer">
+                             <a href="" class="yellow-btn red-btn">Enroll Course</a>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="col">
+                     <div class="card h-100">
+                         <div class="image-box">
+                             <img src="{% static 'img/DSC_4456.JPG' %}" class="card-img-top" alt="...">
+                         </div>
+                         <div class="card-body">
+                             <h5 class="card-title">Complete Trello Beginners to Advanced</h5>
+                             <p class="card-text">This card has supporting text below as a natural lead-in to additional
+                                 content.</p>
+                         </div>
+                         <div class="card-footer">
+                             <a href="" class="yellow-btn red-btn">Enroll Course</a>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="col">
+                     <div class="card h-100">
+                         <div class="image-box">
+                             <img src="{% static 'img/DSC_4456.JPG' %}" class="card-img-top" alt="...">
+                         </div>
+                         <div class="card-body">
+                             <h5 class="card-title">Complete Trello Beginners to Advanced</h5>
+                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in
+                                 to
+                                 additional content. This card has even longer content than the first to show that equal
+                                 height action.</p>
+                         </div>
+                         <div class="card-footer">
+                             <a href="" class="yellow-btn red-btn">Enroll Course</a>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+{% include "common/footer.html" %}
