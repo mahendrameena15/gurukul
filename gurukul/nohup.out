@@ -1,0 +1,36 @@
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 29, 2023 - 10:08:36
+Django version 4.2.3, using settings 'gurukul.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+
+[29/Jul/2023 10:09:02] "GET / HTTP/1.0" 200 42457
+[29/Jul/2023 10:09:02] "GET /assets/css/style.css HTTP/1.0" 200 23740
+[29/Jul/2023 10:09:02] "GET /assets/img/logo.svg HTTP/1.0" 200 3283
+[29/Jul/2023 10:09:02] "GET /assets/img/about-home.jpg HTTP/1.0" 200 374271
+[29/Jul/2023 10:09:02] "GET /assets/img/explain-icon.svg HTTP/1.0" 200 341
+[29/Jul/2023 10:09:02] "GET /assets/img/footer-logo.svg HTTP/1.0" 200 3553
+[29/Jul/2023 10:09:02] "GET /assets/img/activ.jpg HTTP/1.0" 200 208425
+[29/Jul/2023 10:09:02] "GET /assets/img/banner-bg.jpg HTTP/1.0" 200 966737
+[29/Jul/2023 10:09:02] "GET /assets/img/testimonial.png HTTP/1.0" 200 20927
+[29/Jul/2023 10:09:02] "GET /assets/img/acti.jpg HTTP/1.0" 200 255917
+[29/Jul/2023 10:09:02] "GET /assets/img/eductaions.jpg HTTP/1.0" 200 332733
+[29/Jul/2023 10:09:02] "GET /assets/img/gallery-bg.jpg HTTP/1.0" 200 310000
+[29/Jul/2023 10:09:04] "GET /about-us HTTP/1.0" 200 45191
+[29/Jul/2023 10:09:04] "GET /assets/img/about.png HTTP/1.0" 200 113914
+[29/Jul/2023 10:09:04] "GET /assets/img/our-vission.jpg HTTP/1.0" 200 281327
+[29/Jul/2023 10:09:04] "GET /assets/img/our-mission.jpg HTTP/1.0" 200 256476
+[29/Jul/2023 10:09:06] "GET / HTTP/1.0" 200 42457
+[29/Jul/2023 10:09:09] "GET /about-admission HTTP/1.0" 200 17018
+[29/Jul/2023 10:09:10] "GET /assets/img/about-banner.jpg HTTP/1.0" 200 318929
+[29/Jul/2023 10:09:11] "GET /activities HTTP/1.0" 200 52060
+[29/Jul/2023 10:09:11] "GET /assets/img/DSC_4456.JPG HTTP/1.0" 200 212028
+[29/Jul/2023 10:09:11] "GET /assets/img/calculating.png HTTP/1.0" 200 1841
+[29/Jul/2023 10:09:11] "GET /assets/img/Nature.jpg HTTP/1.0" 200 461577
+[29/Jul/2023 10:09:11] "GET /assets/img/history.jpg HTTP/1.0" 200 260388
+[29/Jul/2023 10:09:11] "GET /assets/img/Cultural.jpg HTTP/1.0" 200 195168
+[29/Jul/2023 10:09:13] "GET /about-admission HTTP/1.0" 200 17018
+[29/Jul/2023 10:09:15] "GET /activities HTTP/1.0" 200 52060
