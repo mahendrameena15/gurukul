@@ -52,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',  
 ]
 
 ROOT_URLCONF = 'gurukul.urls'
@@ -73,7 +74,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'gurukul.wsgi.application'
-
+CSRF_TRUSTED_ORIGINS = ['https://sgbveda.org']
+CORS_ALLOWED_ORIGINS = ["https://sgbveda.org",]
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
@@ -81,9 +83,13 @@ WSGI_APPLICATION = 'gurukul.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'gurukul_db',
-        'USER': 'root',
-        'PASSWORD': '',
+        # 'NAME': 'gurukul_db',
+        # 'USER': 'root',
+        # 'PASSWORD': '',
+        'NAME': 'gurukuldb',
+        'USER': 'gurukuluser',
+        'PASSWORD': 'P@ssw0rd@123##',
+        
         'HOST': 'localhost',  # Change this to your MySQL server's host if needed
         'PORT': '3306',  
             # Set the port number if your MySQL server is running on a non-default port
