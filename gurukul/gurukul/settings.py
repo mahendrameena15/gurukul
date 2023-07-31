@@ -54,7 +54,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',  
 ]
-CORS_ALLOWED_ORIGINS = ["https://sgbveda.org", ]
+CORS_ALLOWED_ORIGINS = ["*" ]
 
 ROOT_URLCONF = 'gurukul.urls'
 
