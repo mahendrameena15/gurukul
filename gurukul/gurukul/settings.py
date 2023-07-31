@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'admin_panel',
     'rest_framework',
     'phonenumber_field',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
