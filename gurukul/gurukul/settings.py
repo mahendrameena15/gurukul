@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'phonenumber_field',
     'corsheaders',
 ]
+CSRF_TRUSTED_ORIGINS = ['https://sgbveda.org']
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -54,6 +55,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',  
 ]
+CORS_ALLOWED_ORIGINS = ["https://*",]
 
 ROOT_URLCONF = 'gurukul.urls'
 
