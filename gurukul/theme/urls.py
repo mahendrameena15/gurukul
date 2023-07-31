@@ -35,8 +35,12 @@ urlpatterns = [
     path('donation',views.donation,name='donation'),
     path('class-routine',views.class_routine,name='class-routine'),
     path('thankyou',views.thankyou,name='thankyou'),
+    path('success',views.success,name='success'),
     path('404-Error',views.error_page,name='404-Error'),
     path('contact_us_view',views.contact_us_view,name='contact_us_view'),
+    path('home-touch',views.home_get_in_touch,name='home-touch'),
+    path('admission-touch',views.admission_get_in_touch,name='admission-touch'),
+    path('about-touch',views.about_get_in_touch,name='about-touch'),
     #POST Admission
     path("admission-form-view",admission.admission_form_view,name="admission-form-view"),    
 

@@ -1,11 +1,13 @@
 from django import forms 
-from admin_panel.models import Student_Admission
+from admin_panel.models import Student_Admission,ContactMessage
 import re
+from phonenumber_field.formfields import PhoneNumberField
+from phonenumber_field.phonenumber import PhoneNumber
 class AdmissionForm(forms.ModelForm): 
     class Meta:
         model = Student_Admission
         fields = '__all__'
-  
+   
     def clean_student_name(self):
         student_name = self.cleaned_data['student_name'] 
         if ' ' not in student_name: 
@@ -38,12 +40,15 @@ class AdmissionForm(forms.ModelForm):
             raise forms.ValidationError('Percentage score must be between 0 and 100.')
         return percentage_scored
 
-class ContactForm(forms.Form):
-    first_name = forms.CharField(max_length=100,required=True)
-    last_name = forms.CharField(max_length=100,required=True)
-    email = forms.EmailField(required=True)
-    phone_number = forms.CharField(max_length=10,required=True)
-    message = forms.CharField(widget=forms.Textarea(attrs={'cols': 60, 'rows': 6}),required=True)
+class ContactForm(forms.ModelForm):
+    class Meta:
+        model = ContactMessage
+        fields = '__all__'
+    # first_name = forms.CharField(max_length=100,required=True)
+    # last_name = forms.CharField(max_length=100,required=True)
+    # email = forms.EmailField(required=True)
+    # phone_number = forms.CharField(max_length=10,required=True)
+    # message = forms.CharField(widget=forms.Textarea(attrs={'cols': 60, 'rows': 6}),required=True)
     def clean_first_name(self):
         first_name = self.cleaned_data['first_name']
         return first_name

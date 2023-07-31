@@ -10,10 +10,10 @@
                             and growth, values are cultivated, minds are enlightened, and souls are nurtured as
                             students embrace the timeless wisdom of the Vedas and the richness of cultural
                             traditions. </p>
-                        <a href=""><i class="bi bi-facebook"></i></a>
-                        <a href=""><i class="bi bi-instagram"></i></a>
-                        <a href=""><i class="bi bi-linkedin"></i></a>
-                        <a href=""><i class="bi bi-twitter"></i></a>
+                        <a href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.instagram.com/"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.linkedin.com/"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://www.twitter.com/"><i class="bi bi-twitter"></i></a>
                     </div>
                 </div>
                 <div class="col-md-8 col-lg-8 col-sm-12">
@@ -52,10 +52,10 @@
                                 <div class="footer-contact-info">
                                     <h4>Contact us</h4>
                                     <p style="color: #fff;margin: 10px 0px;">Maluka Ved Vidyalaya, Shri Jadkhor
-                                        Godham, Via-Pahalwara, Post- G
+                                        Godham, Via-Pahalwara, Post- Guhana, Dist- Bharatpur (Rajasthan) 321206
                                     </p>
                                     <a href="tel:+91 8619207496"><i class="bi bi-telephone-fill"></i> +91 8619207496</a>
-                                    <a href="#"><i class="bi bi-envelope-fill"></i> sgbveda@gmail.com</a>
+                                    <a href="mailto:sgbveda@gmail.com"><i class="bi bi-envelope-fill"></i> sgbveda@gmail.com</a>
                                 </div>
                             </div>
                         </div>
@@ -125,8 +125,9 @@
 <!-- country code with flag -->
 <script>
     const phoneInput = document.getElementById('phone-input');
+  
     const iti = window.intlTelInput(phoneInput, {
-        preferredCountries: ['us', 'gb', 'de'], // Set preferred countries (optional)
+        preferredCountries: ['us', 'gb', 'de', 'in'], // Set preferred countries (optional)
         separateDialCode: true, // Display country code separately
         initialCountry: 'in', // Auto-detect the user's country
         placeholder: '1234', // Remove the placeholder text
@@ -134,7 +135,7 @@
         nationalMode: false, // Disable national mode (optional)
         utilsScript: 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js' // Load the utils.js file
     });
-
+    
     phoneInput.addEventListener('countrychange', function () {
         const countryCode = iti.getSelectedCountryData().iso2;
         const countryName = iti.getSelectedCountryData().name;

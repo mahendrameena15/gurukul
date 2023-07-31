@@ -104,7 +104,7 @@
                         which he will be tested.</p>
                 </div>
                 <div class="examination-list mt-5">
-                    <h3><span style="padding: 15px 26px;">3</span>Trial Phase</h3>
+                    <h3><span style="padding: 15px 26px;">3</span>Third phase</h3>
                     <p>The third is Gurukul joining phase for the student who has passed the second phase. </p>
 
                     <p>
@@ -155,17 +155,17 @@
                     <div class="contact-form-detail text-center">
                         <div style="margin: 0 auto; max-width: 320px;">
                             <span><i class="bi bi-geo-alt-fill"></i></span>
-                            <p style="font-size: 16px;padding-bottom: 10px;">Maluka Ved Vidyalaya, Shri Jadkhor Godham, Via-Pahalwara, Post- G</p>
+                            <p style="font-size: 16px;padding-bottom: 10px;">Maluka Ved Vidyalaya, Shri Jadkhor Godham, Via-Pahalwara, Post- Guhana, Dist- Bharatpur (Rajasthan) 321206</p>
                             <!-- <p style="font-size: 16px;">Lorem ipsum dolor sit amet, consect etur adi pisicing elit</p> -->
                         </div>
                         <div class="mt-5 mb-5">
                             <span><i class="bi bi-telephone-fill"></i></span>
-                            <a href="#">+91 8619207496</a>
-                            <a href="#">+91 8000450479</a>
+                            <a href="tel:+91 8619207496">+91 8619207496</a>
+                            <a href="tel:+91 8000450479">+91 8000450479</a>
                         </div>
                         <div>
                             <span><i class="bi bi-envelope-fill"></i></span>
-                            <a href="#">sgbveda@gmail.com</a>
+                            <a href="mailto:sgbveda@gmail.com">sgbveda@gmail.com</a>
                            
                         </div>
                     </div>
@@ -177,30 +177,70 @@
                             on a transformative journey. Contact us to learn more about our programs,
                             admissions, and the enriching opportunities that await you. Let's start your
                             path to growth and enlightenment together. </p>
+                        <form method="POST" action="admission-touch">   
+                        {% csrf_token %} 
                         <div class="row">
                             <div class="col-md-6">
                                 <input type="text" class="form-control" placeholder="First Name" aria-label="First name"
-                                    name="firstname">
+                                    name="first_name" value = "{{ form.cleaned_data.first_name }}">
+                                {% if form.first_name.errors %}
+                                    <div class="error-message">
+                                        {% for error in form.first_name.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+               
                             </div>
                             <div class="col-md-6">
                                 <input type="text" class="form-control" placeholder="Last Name" aria-label="Last name"
-                                    name="lastname">
+                                    name="last_name" value = "{{ form.cleaned_data.last_name }}">
+                                 {% if form.last_name.errors %}
+                                    <div class="error-message">
+                                        {% for error in form.last_name.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
                             </div>
                             <div class="col-md-6">
-                                <input type="number" type="tel" class="form-control" name="email"
-                                    placeholder="Your Email">
+                                <input type="email" type="email" class="form-control" name="email"
+                                    placeholder="Your Email" value = "{{ form.cleaned_data.email }}">
+                                {% if form.email.errors %}
+                                    <div class="error-message">
+                                        {% for error in form.email.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
                             </div>
                             <div class="col-md-6">
-                                <input type="number" type="tel" id="phone-input" class="form-control" name="number">
+                                <input type="text"  class="form-control" name="phone_number" placeholder="Phone Number"
+                                value = "{{ form.cleaned_data.phone_number }}">
+                                {% if form.phone_number.errors %}
+                                    <div class="error-message">
+                                        {% for error in form.phone_number.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
                             </div>
                             <div class="col-md-12 mb-3">
                                 <textarea class="form-control" placeholder="Message" id="exampleFormControlTextarea1"
-                                    rows="5"></textarea>
+                                    rows="5" value = "{{ form.cleaned_data.message }}"></textarea >
+                                {% if form.message.errors %}
+                                    <div class="error-message">
+                                        {% for error in form.message.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
                             </div>
                             <div class="col-md-12">
-                                <a href="" class="yellow-btn red-btn">Submit</a>
+                                <button type="submit" class="yellow-btn red-btn">Submit</button>
                             </div>
                         </div>
+                        </form>
                     </div>
                 </div>
             </div>

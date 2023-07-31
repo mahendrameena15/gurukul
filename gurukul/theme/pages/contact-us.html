@@ -32,7 +32,7 @@
                                         <span><i class="bi bi-geo-alt-fill"></i></span>
                                     </div>
                                     <div class="text">
-                                        <p><span>Address:</span> Maluka Ved Vidyalaya, Shri Jadkhor Godham, Via-Pahalwara, Post- G</p>
+                                        <p><span>Address:</span> Maluka Ved Vidyalaya, Shri Jadkhor Godham, Via-Pahalwara, Post- Guhana, Dist- Bharatpur (Rajasthan) 321206</p>
                                     </div>
                                 </div>
                             </div>
@@ -52,7 +52,7 @@
                                         <span><i class="bi bi-send-fill"></i></span>
                                     </div>
                                     <div class="text">
-                                        <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a>
+                                        <p><span>Email:</span> <a href="mailto:sgbveda@gmail.com">sgbveda@gmail.com</a>
                                         </p>
                                     </div>
                                 </div>
@@ -63,7 +63,7 @@
                                         <span><i class="bi bi-globe-asia-australia"></i></span>
                                     </div>
                                     <div class="text">
-                                        <p><span>Website</span> <a href="#">yoursite.com</a></p>
+                                        <p><span>Website</span> <a href="https://sgbveda.org/">sgbveda.org</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -72,7 +72,7 @@
                             <div class="col-md-12">
                                 <div class="contact-wrap w-100 p-md-5 p-4">
                                     <h2 class="mb-4 text-center" style="color: #710101;">Contact Us</h2>
-                                    <form method="POST" action="contact_us_view" id="contactForm" name="contactForm" class="contactForm">
+                                    <form method="POST" action="contact_us_view">
                                         {% csrf_token %}
                                         <div class="row">
                                             <div class="col-md-6 mb-4">
@@ -123,6 +123,7 @@
                                                     <label class="label" for="subject">Phone Number</label>
                                                     <input type="text" class="form-control" name="phone_number"
                                                         id="phonenumber" placeholder="" value = "{{ form.cleaned_data.phone_number }}">
+                        
                                                         {% if form.phone_number.errors %}
                                                         <div class="error-message">
                                                             {% for error in form.phone_number.errors %}
@@ -148,7 +149,8 @@
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <button class="yellow-btn red-btn">Submit</button>
+                                                    
+                                                    <button type="submit" class="yellow-btn red-btn">Submit</button>
                                                 </div>
                                             </div>
                                         </div>

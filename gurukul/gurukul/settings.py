@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'theme',
     'admin_panel',
     'rest_framework',
+    'phonenumber_field',
 ]
 
 MIDDLEWARE = [

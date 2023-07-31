@@ -425,7 +425,7 @@ nav ul li ul li a {
 
 /* header-banner */
 .header {
-    background: url(../img/banner-bg.jpg)no-repeat;
+    background: url(../img/about-banner.jpg)no-repeat;
     width: 100%;
     background-size: cover !important;
     background-position: center !important;
@@ -843,7 +843,7 @@ nav ul li ul li a {
 
 .admission-list li {
     list-style: none;
-    background-image: url("http://127.0.0.1:5502/css/../img/check.svg");
+    background-image: url("../img/check.svg");
     background-repeat: no-repeat;
     padding-left: 30px;
     /* margin-bottom: 6px; */
