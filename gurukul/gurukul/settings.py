@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'admin_panel',
     'rest_framework',
     'phonenumber_field',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -80,9 +81,9 @@ WSGI_APPLICATION = 'gurukul.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'gurukuldb',
-        'USER': 'gurukuluser',
-        'PASSWORD': 'P@ssw0rd@123##',
+        'NAME': 'gurukul_db',
+        'USER': 'root',
+        'PASSWORD': '',
         'HOST': 'localhost',  # Change this to your MySQL server's host if needed
         'PORT': '3306',  
             # Set the port number if your MySQL server is running on a non-default port
