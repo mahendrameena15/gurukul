@@ -77,7 +77,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'gurukul.wsgi.application'
 CSRF_TRUSTED_ORIGINS = ['https://sgbveda.org']
-CORS_ALLOWED_ORIGINS = ["https://sgbveda.org",]
+CORS_ALLOWED_ORIGINS = ["https://*",]
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
