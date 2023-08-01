@@ -7,16 +7,17 @@ class AdmissionForm(forms.ModelForm):
     class Meta:
         model = Student_Admission
         fields = '__all__'
-   
     def clean_student_name(self):
-        student_name = self.cleaned_data['student_name'] 
-        if ' ' not in student_name: 
-            raise forms.ValidationError('Full Name is required and name must contain a space') 
+        student_name = self.cleaned_data['student_name']
+        pattern = r"^[A-Za-z]+$"
+        if not re.match(pattern, student_name):
+            raise forms.ValidationError("Name should contain only characters (letters).")
         return student_name
     def clean_parent_name(self):
-        parent_name = self.cleaned_data['parent_name'] 
-        if ' ' not in parent_name:
-            raise forms.ValidationError('Full Name is required and name must contain a space') 
+        parent_name = self.cleaned_data['parent_name']
+        pattern = r"^[A-Za-z]+$"
+        if not re.match(pattern, parent_name):
+            raise forms.ValidationError("Name should contain only characters (letters).")
         return parent_name
 
     def clean_email(self):
@@ -44,17 +45,20 @@ class ContactForm(forms.ModelForm):
     class Meta:
         model = ContactMessage
         fields = '__all__'
-    # first_name = forms.CharField(max_length=100,required=True)
-    # last_name = forms.CharField(max_length=100,required=True)
-    # email = forms.EmailField(required=True)
-    # phone_number = forms.CharField(max_length=10,required=True)
-    # message = forms.CharField(widget=forms.Textarea(attrs={'cols': 60, 'rows': 6}),required=True)
+   
     def clean_first_name(self):
         first_name = self.cleaned_data['first_name']
+        pattern = r"^[A-Za-z]+$"
+        if not re.match(pattern, first_name):
+            raise forms.ValidationError("Name should contain only characters (letters).")
         return first_name
     def clean_last_name(self):
         last_name = self.cleaned_data['last_name']
+        pattern = r"^[A-Za-z]+$"
+        if not re.match(pattern, last_name):
+            raise forms.ValidationError("Name should contain only characters (letters).")
         return last_name
+   
     def clean_email(self):
         email = self.cleaned_data['email']
         if not re.match(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$', email):
