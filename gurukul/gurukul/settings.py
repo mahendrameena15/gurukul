@@ -55,6 +55,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',  
 ]
+
 CORS_ALLOWED_ORIGINS = ["https://*",]
 
 ROOT_URLCONF = 'gurukul.urls'

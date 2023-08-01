@@ -4,8 +4,8 @@ import random,string
 from admin_panel.models import Student_Admission
 from django.http import HttpResponse
 from datetime import datetime
-def admission_form_view(request):
-    if request.method == "POST":
+def admission_form(request): 
+    if request.method == "POST":    
         form = AdmissionForm(request.POST)
         if form.is_valid():    
             student = Student_Admission(
@@ -25,9 +25,9 @@ def admission_form_view(request):
             student.save()
             return render(request,'thankyou.html',{'data':student})      
         else:
-            for field in form.errors.keys():
-                if field in form.cleaned_data:
-                    del form.cleaned_data[field]
+           return render(request, 'admission-form.html', {'form': form, 'form_errors': form.errors}) 
     else:  
-        form=AdmissionForm()
-    return render(request,'admission-form.html',{'form':form}) 
+        form=AdmissionForm() 
+        page_title = "Admission Form"
+        context = {'page_title':page_title} 
+        return render(request, 'admission-form.html', context)

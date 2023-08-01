@@ -443,7 +443,7 @@
                 <div class="contact-form-input">
                     <h3 style="color: #800000;text-transform: uppercase;">Get In Touch</h3>
                     <p style="max-width: 780px;margin: 20px 0px;">Connect with us today and embark on a transformative journey. Contact us to learn more about our programs, admissions, and the enriching opportunities that await you. Let's start your path to growth and enlightenment together.</p>
-                    <form method="POST" action="home-touch">
+                    <form method="POST" action="{% url 'home' %}">
                     {% csrf_token %}
                     <div class="row">
                         <div class="col-md-6">

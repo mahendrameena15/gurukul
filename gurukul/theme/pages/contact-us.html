@@ -72,7 +72,8 @@
                             <div class="col-md-12">
                                 <div class="contact-wrap w-100 p-md-5 p-4">
                                     <h2 class="mb-4 text-center" style="color: #710101;">Contact Us</h2>
-                                    <form method="POST" action="contact_us_view">
+    
+                                    <form method="POST" action="contact-us">
                                         {% csrf_token %}
                                         <div class="row">
                                             <div class="col-md-6 mb-4">
@@ -80,14 +81,15 @@
                                                     <label class="label" for="name">First Name</label>
                                                     <input type="text" class="form-control" name="first_name" id="firstname"
                                                         placeholder="" value = "{{ form.cleaned_data.first_name }}" />
+                                                       
                                                         {% if form.first_name.errors %}
                                                             <div class="error-message">
-                                                                {% for error in form.first_name.errors %}
+                                                                {% for error in form.first_name.errors %} 
                                                                     <span>{{ error }}</span>
                                                                 {% endfor %}
                                                             </div>
-                                                        {% endif %}
-                                    
+                                                        {% endif %} 
+                                                    
                                                 </div>
                                             </div>
                                             <div class="col-md-6 mb-4">
@@ -102,6 +104,7 @@
                                                             {% endfor %}
                                                         </div>
                                                         {% endif %}
+                                                        
                                                 </div>
                                             </div>
                                             <div class="col-md-6 mb-4">
@@ -116,6 +119,7 @@
                                                             {% endfor %}
                                                         </div>
                                                         {% endif %}
+                                                        
                                                 </div>
                                             </div>
                                             <div class="col-md-6 mb-4">
@@ -130,7 +134,8 @@
                                                                 <span>{{ error }}</span>
                                                             {% endfor %}
                                                         </div>
-                                                        {% endif %}
+                                                        {% endif %} 
+                                                        
                                                 </div>
                                             </div>
                                             <div class="col-md-12 mb-4">
@@ -145,6 +150,7 @@
                                                             {% endfor %}
                                                         </div>
                                                         {% endif %}
+                                                       
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
@@ -155,6 +161,13 @@
                                             </div>
                                         </div>
                                     </form>
+                                    <!-- {% if messages %}
+                                    <ul class="errorlist">
+                                      {% for message in messages %}
+                                        <li>{{ message }}</li>
+                                      {% endfor %}
+                                    </ul>
+                                  {% endif %} -->
                                 </div>
                             </div>
                         </div>
