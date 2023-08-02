@@ -49,9 +49,9 @@ class Course(models.Model):
     courses = models.CharField(max_length=10,null=True,choices=COURSES)
     title = models.CharField(max_length=100,default="")
     author = models.CharField(max_length=100,default="")
-    description = models.TextField(max_length=200,null=True,blank=True) 
-    meta = JSONField(max_length=200,null=True)
-    seo = JSONField(max_length=200,null=True)
+    description = models.TextField(max_length=200,default="") 
+    meta = models.TextField(blank=True,default=None)
+    seo = models.TextField(blank=True,default=None)
     
     def __str__(self):
         return self.author

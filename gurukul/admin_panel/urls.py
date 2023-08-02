@@ -41,4 +41,6 @@ urlpatterns = [
     path('edit-course',courses.edit_course, name='edit-course'),
     path('course-list',courses.course_list, name='course-list'),
 
+    path('success',views.success, name='success'),
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

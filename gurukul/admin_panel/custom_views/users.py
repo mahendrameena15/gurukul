@@ -20,7 +20,6 @@ def user_list(request):
             error_message = "Data Not Found"
             return render(request, 'users/list.html', {'error_message': error_message,'page_title':page_title})
     else:
-        # error_message = "Data Not Found"
         return render(request, 'users/list.html',{'page_title':page_title})  
 
 

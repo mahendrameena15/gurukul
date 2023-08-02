@@ -86,12 +86,12 @@ CORS_ALLOWED_ORIGINS = ["https://*",]
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        # 'NAME': 'gurukul_db',
-        # 'USER': 'root',
-        # 'PASSWORD': '',
-        'NAME': 'gurukuldb',
-        'USER': 'gurukuluser',
-        'PASSWORD': 'P@ssw0rd@123##',
+        'NAME': 'gurukul_db',
+        'USER': 'root',
+        'PASSWORD': '',
+        # 'NAME': 'gurukuldb',
+        # 'USER': 'gurukuluser',
+        # 'PASSWORD': 'P@ssw0rd@123##',
         
         'HOST': 'localhost',  # Change this to your MySQL server's host if needed
         'PORT': '3306',  
