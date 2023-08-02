@@ -11,21 +11,17 @@ def edit_user(request):
     context = {'page_title':page_title}
     return render(request, 'users/edit.html', context)
 def user_list(request):
-    page_title = "Users List"
-    context = {'page_title':page_title}
-    return render(request, 'users/list.html', context)
-
-
-def user_list_view(request):
+    page_title = "Users List"  
     if request.method == 'GET':
-        import pdb;
-        pdb.set_trace()
         user_list=Student_Admission.objects.all()
         if user_list:
-             return render(request,'users/list.html',{'user_list':user_list})
+             return render(request,'users/list.html',{'user_list':user_list,'page_title':page_title})
         else:
             error_message = "Data Not Found"
-            return render(request, 'users/list.html', {'error_message': error_message})
+            return render(request, 'users/list.html', {'error_message': error_message,'page_title':page_title})
     else:
-        error_message = "Data Not Found"
-    return render(request, 'users/list.html', {'error_message': error_message})
+        # error_message = "Data Not Found"
+        return render(request, 'users/list.html',{'page_title':page_title})  
+
+
+

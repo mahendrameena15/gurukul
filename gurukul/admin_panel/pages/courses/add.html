@@ -1,9 +1,101 @@
 {% extends 'common/base.html' %}
-
 {% block title %} {{page_title}} {% endblock %}
-
 {% block content %}
-  
-<h1>Add Course</h1>
-  
+<section class="content">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card card-primary ">
+                <div class="card-header">
+                    <h3 class="card-title">Add Course</h3>
+
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body">
+
+                    <form method="POST" action="add-course">
+                        {% csrf_token %} 
+                        <div class="form-group">
+                            <label for="inputName">Title</label>
+                            <input type="text" id="inputName" name="title" class="form-control"
+                            value = "{{ form.cleaned_data.title }}">
+                            {% if form.title.errors %}
+                                <div class="error-message">
+                                    {% for error in form.title.errors %}
+                                    <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            <label for="inputStatus">Courses</label>
+                            <select class="form-control custom-select" name="courses" aria-label="Default select example"
+                            value = "{{ form.cleaned_data.courses }}" >
+                                <option selected>Select one</option>
+                                <option value="Category 1">Category 1</option>
+                                <option value="Category 2">Category 2</option>
+                                <option value="Category 3">Category 3</option>
+                            </select>
+                            {% if form.courses.errors %}
+                                <div class="error-message">
+                                    {% for error in form.courses.errors %}
+                                    <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            <label for="inputClientCompany">Author</label>
+                            <input type="text" id="inputClientCompany" class="form-control" name="author"
+                            value = "{{ form.cleaned_data.author }}">
+                            {% if form.author.errors %}
+                                <div class="error-message">
+                                    {% for error in form.author.errors %}
+                                    <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            <label for="inputDescription">Description</label>
+                            <textarea id="inputDescription" class="form-control" rows="4" name="description"
+                            value = "{{ form.cleaned_data.description }}"></textarea>
+                            {% if form.description.errors %}
+                                <div class="error-message">
+                                    {% for error in form.description.errors %}
+                                    <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            <label for="inputProjectLeader">Meta</label>
+                            <textarea id="json_data" name="meta" class="form-control" rows="4"
+                            value = "{{ form.cleaned_data.meta }}"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputProjectLeader">Seo</label>
+                            <textarea id="json_data1" name="seo" class="form-control" rows="4"
+                            value = "{{ form.cleaned_data.seo }}"></textarea>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <!-- <a href="#" class="btn btn-secondary">Cancel</a> -->
+                                <button type="submit" class="btn btn-success float-right">Add</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</section>
+
 {% endblock %}

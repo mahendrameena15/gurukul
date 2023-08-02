@@ -1,25 +1,128 @@
 {% extends 'common/base.html' %}
-
 {% block title %} {{page_title}} {% endblock %}
-
 {% block content %}
-  
-
-
-    <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title"></h3>
-              </div>
-              <!-- /.card-header -->
-            <form method="GET" action="all-users">
-             {% for x in user_list %}
+<style>
+  .table td, .table th {
+    /* padding: .75rem; */
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+    font-size: 14px;
+    text-align: center;
+    padding: 5px;
+}
+</style>
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">User Table</h3>
+            </div>
+            <!-- /.card-header -->
+            <form method="GET" action="users_list">
               <div class="card-body">
-                <table id="example2" class="table table-bordered table-hover">
+                  <table id="euserample2" class="table table-bordered table-hover">
+                    <thead>
+                    <tr>
+                      <th>Id</th>
+                      <th>Student Name</th>
+                      <th>Parent Name</th>
+                      <th>DOB</th>
+                      <th>Email</th>
+                      <th>State</th>
+                      <th>District</th>
+                      <th>Address</th>
+                      <th>Phone No.</th>
+                      <th>Class Passesd in 2023</th>
+                      <th>Percentage Scored</th>
+                      <th>Language Medium</th>
+                      <th>Reason For Choice</th>
+                    </tr>
+                    </thead>
+                      <tbody>        
+                     
+                       {% for user in user_list %}
+                        <tr>
+                          <td>{{user.id}}</td>
+                          <td>{{user.student_name}}</td>
+                          <td>{{user.parent_name}}</td>
+                          <td>{{user.date_of_birth}}</td>
+                          <td>{{user.email}}</td>
+                          <td>{{user.state}}</td>
+                          <td>{{user.district}}</td>
+                          <td>{{user.address}}</td>
+                          <td>{{user.phone_number}}</td>
+                          <td>{{user.class_passed_in_2023}}</td>
+                          <td>{{user.percentage_scored}}</td>
+                          <td>{{user.language_medium}}</td>
+                          <td>{{user.reason_for_choice}}</td>
+                          <td>{{user.class_passesd_in_2023}}</td>
+                         
+                        </tr> 
+                        {% endfor %} 
+                       
+                      </tbody>
+                  </table>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+{% endblock %}
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- <form method="GET" action="all-users">
+             {% for {{user in user_list %}
+              <div class="card-body">
+                <table id="euserample2" class="table table-bordered table-hover">
                   <thead>
                   <tr>
                     <th>Id</th>
@@ -39,22 +142,22 @@
                   </thead>
                   <tbody>
                   <tr>
-                    <td>x.id</td>
-                    <td>x.student_name</td>
-                    <td>x.parent_name</td>
-                    <td>x.date_of_birth</td>
-                    <td>x.email</td>
-                    <td>x.state</td>
-                    <td>x.district</td>
-                    <td>x.address</td>
-                    <td>x.phone_number</td>
-                    <td>x.class_passesd_in_2023</td>
-                    <td>x.percentage_scored</td>
-                    <td>x.language_medium</td>
-                    <td>x.reason_for_choice</td>
+                    <td>{{user.id</td>
+                    <td>{{user.student_name</td>
+                    <td>{{user.parent_name</td>
+                    <td>{{user.date_of_birth</td>
+                    <td>{{user.email</td>
+                    <td>{{user.state</td>
+                    <td>{{user.district</td>
+                    <td>{{user.address</td>
+                    <td>{{user.phone_number</td>
+                    <td>{{user.class_passesd_in_2023</td>
+                    <td>{{user.percentage_scored</td>
+                    <td>{{user.language_medium</td>
+                    <td>{{user.reason_for_choice</td>
                   </tr> 
                   </tbody>
-                  <!-- <tfoot>
+                   <tfoot>
                   <tr>
                     <th>Rendering engine</th>
                     <th>Browser</th>
@@ -62,28 +165,9 @@
                     <th>Engine version</th>
                     <th>CSS grade</th>
                   </tr>
-                  </tfoot> -->
+                  </tfoot> 
                 </table>
               </div>
               {% endfor %} 
-            </form>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-          </div>
-          <!-- /.col -->
-        </div>
-        <!-- /.row -->
-      </div>
-      <!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
- 
-  <!-- /.content-wrapper -->
+            </form> -->
     
-{% endblock %}
- 
-
-
-
-

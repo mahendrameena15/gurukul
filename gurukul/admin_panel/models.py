@@ -39,6 +39,23 @@ class ContactMessage(models.Model):
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
 
+class Course(models.Model):
+    COURSES = [
+        ('Category 1', 'Category 1'),
+        ('Category 2', 'Category 2'),
+        ('Category 3', 'Category 3'),
+    ]
+
+    courses = models.CharField(max_length=10,null=True,choices=COURSES)
+    title = models.CharField(max_length=100,default="")
+    author = models.CharField(max_length=100,default="")
+    description = models.TextField(max_length=200,null=True,blank=True) 
+    meta = JSONField(max_length=200,null=True)
+    seo = JSONField(max_length=200,null=True)
+    
+    def __str__(self):
+        return self.author
+
    
 # class Users(models.Model):
 #     name = models.CharField(max_length=255)

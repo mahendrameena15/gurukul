@@ -30,7 +30,7 @@ urlpatterns = [
     path('edit-user', users.edit_user, name='edit-user'),
     path('users-list', users.user_list, name='users-list'),
     
-    path('all-users',users.user_list_view,name='all-users'),
+    # path('all-users',users.user_list_view,name='all-users'),
 
     #Categories
     path('add-category', categories.add_category, name='add-category'),
