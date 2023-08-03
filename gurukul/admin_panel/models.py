@@ -49,7 +49,7 @@ class Course(models.Model):
     courses = models.CharField(max_length=10,null=True,choices=COURSES)
     title = models.CharField(max_length=100,default="")
     author = models.CharField(max_length=100,default="")
-    image = models.ImageField(upload_to ='images/',default='null')
+    picture = models.ImageField(upload_to ='images/',default='null')
     description = models.TextField(max_length=200,default="") 
     meta = models.TextField(max_length=160,default='null',blank=True)
    

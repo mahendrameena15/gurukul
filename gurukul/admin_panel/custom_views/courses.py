@@ -15,8 +15,8 @@ def add_course(request):
             courses = form.cleaned_data['courses'],
             author = form.cleaned_data['author'],
             description = form.cleaned_data['description'])
-            if 'image' in request.FILES:
-                add_course.image = request.FILES['image'] 
+            if 'picture' in request.FILES:
+                add_course.image = request.FILES['picture'] 
             meta_data = form.cleaned_data['meta'] 
             if meta_data:
                 add_course.meta = meta_data
