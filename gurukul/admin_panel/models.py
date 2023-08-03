@@ -77,4 +77,5 @@ class Course_Seo(models.Model):
 #     USERNAME_FIELD = 'email'
 #     REQUIRED_FIELDS = ['name']
     
-    
+class Category_Seo(models.Model):
+    meta_title=models.CharField(max_length=100,default="")
