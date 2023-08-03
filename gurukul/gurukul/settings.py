@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'theme',
     'admin_panel',
     'rest_framework',
-    'corseheaders',
+    'corsheaders',
 ]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -58,7 +58,7 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = ["https://*", ]
 
 
-CSRF_TRUSTED_ORIGINS = ["sgbveda.org"]
+CSRF_TRUSTED_ORIGINS = ["https://sgbveda.org"]
 ROOT_URLCONF = 'gurukul.urls'
 
 TEMPLATES = [
