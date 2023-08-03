@@ -49,14 +49,20 @@ class Course(models.Model):
     courses = models.CharField(max_length=10,null=True,choices=COURSES)
     title = models.CharField(max_length=100,default="")
     author = models.CharField(max_length=100,default="")
+    image = models.ImageField(upload_to ='images/',default='null')
     description = models.TextField(max_length=200,default="") 
-    meta = models.TextField(blank=True,default=None)
-    seo = models.TextField(blank=True,default=None)
+    meta = models.TextField(max_length=160,default='null',blank=True)
+   
     
     def __str__(self):
         return self.author
 
-   
+class Course_Seo(models.Model):
+    meta_title=models.CharField(max_length=100,default="")
+    meta_description=models.CharField(max_length=200,default="")
+    meta_keywords=models.TextField(default="")
+
+
 # class Users(models.Model):
 #     name = models.CharField(max_length=255)
 #     email = models.EmailField(unique=True)

@@ -8,15 +8,18 @@ def add_course(request):
     if request.method == 'POST':
         # import pdb;
         # pdb.set_trace()
-        form = CourseForm(request.POST)
+        form = CourseForm(request.POST,request.FILES)
         if form.is_valid():    
             add_course=Course(
             title = form.cleaned_data['title'],
             courses = form.cleaned_data['courses'],
             author = form.cleaned_data['author'],
-            description = form.cleaned_data['description'],
-            meta = form.cleaned_data['meta'],
-            seo = form.cleaned_data['seo'] )   
+            description = form.cleaned_data['description'])
+            if 'image' in request.FILES:
+                add_course.image = request.FILES['image'] 
+            meta_data = form.cleaned_data['meta'] 
+            if meta_data:
+                add_course.meta = meta_data
             add_course.save()         
             return redirect('success')
         else:  
