@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from admin_panel.forms import CourseForm
 from admin_panel.models import Course
-import json
+
 def add_course(request):
     page_title = "Add Course"
     if request.method == 'POST':
