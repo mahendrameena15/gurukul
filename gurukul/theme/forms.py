@@ -9,13 +9,13 @@ class AdmissionForm(forms.ModelForm):
         fields = '__all__'
     def clean_student_name(self):
         student_name = self.cleaned_data['student_name']
-        pattern = r"^[A-Za-z]+$"
+        pattern = r"^[A-Za-z ]+$"
         if not re.match(pattern, student_name):
             raise forms.ValidationError("Name should contain only characters (letters).")
         return student_name
     def clean_parent_name(self):
         parent_name = self.cleaned_data['parent_name']
-        pattern = r"^[A-Za-z]+$"
+        pattern = r"^[A-Za-z ]+$"
         if not re.match(pattern, parent_name):
             raise forms.ValidationError("Name should contain only characters (letters).")
         return parent_name

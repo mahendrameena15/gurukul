@@ -62,6 +62,30 @@ class Course_Seo(models.Model):
     meta_description=models.CharField(max_length=200,default="")
     meta_keywords=models.TextField(default="")
 
+class Category(models.Model):
+    CATEGORY = [
+        ('Category 1', 'Category 1'),
+        ('Category 2', 'Category 2'),
+        ('Category 3', 'Category 3'),
+    ]
+
+    category = models.CharField(max_length=10,null=True,choices=CATEGORY)
+    title = models.CharField(max_length=100,default="")
+    author = models.CharField(max_length=100,default="")
+    picture = models.ImageField(upload_to ='images/',default='null')
+    description = models.TextField(max_length=200,default="") 
+    meta = models.TextField(max_length=160,default='null',blank=True)
+   
+    
+    def __str__(self):
+        return self.author
+
+
+class Category_Seo(models.Model):
+    meta_title=models.CharField(max_length=100,default="")
+    meta_description=models.CharField(max_length=200,default="")
+    meta_keywords=models.TextField(default="")
+
 
 # class Users(models.Model):
 #     name = models.CharField(max_length=255)
@@ -76,6 +100,3 @@ class Course_Seo(models.Model):
 #     updated_at = models.DateTimeField(auto_now=True)    
 #     USERNAME_FIELD = 'email'
 #     REQUIRED_FIELDS = ['name']
-    
-class Category_Seo(models.Model):
-    meta_title=models.CharField(max_length=100,default="")

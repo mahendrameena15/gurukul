@@ -1,9 +1,62 @@
 {% extends 'common/base.html' %}
-
 {% block title %} {{page_title}} {% endblock %}
-
 {% block content %}
-  
-<h1>Category List</h1>
-  
+<style>
+    .table td, .table th {
+      /* padding: .75rem; */
+      vertical-align: top;
+      border-top: 1px solid #dee2e6;
+      font-size: 14px;
+      text-align: center;
+      padding: 5px;
+  }
+  </style>
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Categories Table</h3>
+              </div>
+            
+              <form method="GET" action="category-list">
+                <div class="card-body">
+                    <table id="euserample2" class="table table-bordered table-hover">
+                      <thead>
+                      <tr>
+                        <th>Id</th>
+                        <th>Title</th>
+                        <th>Category</th>
+                        <th>Author</th>
+                        <th>Picture</th>
+                        <th>Description</th>
+                        <th>Meta</th>
+                      </tr>
+                      </thead>
+                        <tbody>        
+                       
+                         {% for user in category_list %}
+                          <tr>
+                            <td>{{user.id}}</td>
+                            <td>{{user.title}}</td>
+                            <td>{{user.category}}</td>
+                            <td>{{user.author}}</td>
+                            <td>{{user.picture}}</td>
+                            <td>{{user.description}}</td>
+                            <td>{{user.meta}}</td>
+                           
+                          </tr> 
+                          {% endfor %} 
+                         
+                        </tbody>
+                    </table>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+   
 {% endblock %}
