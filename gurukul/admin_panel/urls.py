@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from admin_panel import views
-from .custom_views import frontend, dashboard,users,courses,categories
+from .custom_views import frontend, dashboard,users,courses,categories,contact
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -31,6 +31,9 @@ urlpatterns = [
     path('users-list', users.user_list, name='users-list'),
     
     # path('all-users',users.user_list_view,name='all-users'),
+    #Contact
+    path('add-contact',contact.add_contact, name='add-contact'),
+    path('contact-list',contact.contact_list, name='contact-list'),
 
     #Categories
     path('add-category', categories.add_category, name='add-category'),
@@ -38,8 +41,8 @@ urlpatterns = [
     path('category-list',categories.category_list, name='category-list'),
     #Courses
     path('add-course', courses.add_course, name='add-course'),
-    path('edit-course',courses.edit_course, name='edit-course'),
     path('course-list',courses.course_list, name='course-list'),
+    path('edit-course',courses.edit_course, name='edit-course'),
 
     path('success',views.success, name='success'),
 

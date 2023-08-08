@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from admin_panel.forms import CourseForm
 from admin_panel.models import Course
+from django.shortcuts import get_object_or_404
 
 def add_course(request):
     page_title = "Add Course"
@@ -44,5 +45,28 @@ def course_list(request):
 
 def edit_course(request):
     page_title = "Edit Course"
-    context = {'page_title':page_title}
+    context={'page_title': page_title}
     return render(request, 'courses/edit.html', context)
+    # course = get_object_or_404(Course, pk=id)
+
+    # if request.method == 'POST':
+    #     form = CourseForm(request.POST, request.FILES, instance=course)
+    #     if form.is_valid():
+    #         course.title = form.cleaned_data['title']
+    #         course.courses = form.cleaned_data['courses']
+    #         course.author = form.cleaned_data['author']
+    #         course.description = form.cleaned_data['description']  
+    #         if 'picture' in request.FILES:
+    #             course.picture = request.FILES['picture']
+    #         meta_data = form.cleaned_data['meta']
+    #         if meta_data:
+    #             course.meta = meta_data
+    #         course.save()
+    #         return redirect('success')
+    #     else:
+    #         return render(request, 'courses/edit.html', {'form': form, 'form_errors': form.errors, 'page_title': page_title, 'id':id})
+    # else:
+    #     form = CourseForm(instance=course)
+        # context = {'form': form, 'page_title': page_title, 'id':id}
+       
+        # return render(request, 'courses/edit.html', context)

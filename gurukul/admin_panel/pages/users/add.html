@@ -1,9 +1,226 @@
 {% extends 'common/base.html' %}
-
 {% block title %} {{page_title}} {% endblock %}
-
 {% block content %}
-  
-<h1>Add Users</h1>
-  
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card card-primary ">
+                <div class="card-header">
+                    <h3 class="card-title">Add Users</h3>
+
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form method="POST" action="add-user">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-6">
+                                    <label for="inputName1" class="form-label">Full Name</label>
+                                    <input type="text" name="student_name" class="form-control" id="inputName1"
+                                        value="{{ form.cleaned_data.student_name }}" />
+                                    {% if form.student_name.errors %}
+                                    <div class="error-message">
+                                        {% for error in form.student_name.errors %}
+                                        <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                    {% endif %}
+                                </div>
+                                <div class="col-6">
+                                    <label for="inputName2" class="form-label">Parent name</label>
+                                    <input type="text" name="parent_name" class="form-control" id="inputName2"
+                                        value="{{ form.cleaned_data.parent_name }}" />
+                                    {% if form.parent_name.errors %}
+                                    <div class="error-message">
+                                        {% for error in form.parent_name.errors %}
+                                        <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="birthdate" class="form-label">Date of Birth</label>
+                                    <input type="date" class="form-control" id="birthdate" name="date_of_birth"
+                                        value="{{ form.cleaned_data.date_of_birth }}" />
+                                    {% if form.date_of_birth.errors %}
+                                        <div class="error-message">
+                                            {% for error in form.date_of_birth.errors %}
+                                            <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}                 
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="inputemail" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="inputemail" name="email"
+                                        value="{{ form.cleaned_data.email }}" />
+                                    {% if form.email.errors %}
+                                        <div class="error-message">
+                                            {% for error in form.email.errors %}
+                                            <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="inputstate" class="form-label">State</label>
+                                    <input type="text" name="state" class="form-control" id="inputstate"
+                                        value="{{ form.cleaned_data.state }}" />
+                                    {% if form.state.errors %}
+                                    <div class="error-message">
+                                        {% for error in form.state.errors %}
+                                        <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                    {% endif %}
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="inputdistrict" class="form-label">District</label>
+                                    <input type="text" name="district" class="form-control" id="inputdistrict"
+                                        value="{{ form.cleaned_data.district }}" />
+                                    {% if form.district.errors %}
+                                    <div class="error-message">
+                                        {% for error in form.district.errors %}
+                                        <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="inputAddress" class="form-label">Address</label>
+                                    <input type="text" name="address" class="form-control" id="inputAddress"
+                                        value="{{ form.cleaned_data.address }}" />
+                                    {% if form.address.errors %}
+                                    <div class="error-message">
+                                        {% for error in form.address.errors %}
+                                        <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                    {% endif %}
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="inputnumber" class="form-label">Phone Number</label>
+                                    <input type="text" name="phone_number" class="form-control" id="inputnumber" placeholder=""
+                                        maxlength="10" value="{{ form.cleaned_data.phone_number }}" />
+                                    {% if form.phone_number.errors %}
+                                    <div class="error-message">
+                                        {% for error in form.phone_number.errors %}
+                                        <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="inputyear" class="form-label">Which class has passed in the year 2023</label>
+                                    <select name="class_passed_in_2023" class="form-select" aria-label="Default select example"
+                                        value="{{ form.cleaned_data.class_passed_in_2023}}">
+                                        <option selected>Choose</option>
+                                        <option value="5th">5th</option>
+                                        <option value="6th">6th</option>
+                                        <option value="7th">7th</option>
+                                        <option value="8th">8th</option>
+                                        <option value="9th">9th</option>
+                                        <option value="10th">10th</option>
+                                        <option value="10th">11th</option>
+                                        <option value="10th">12th</option>
+                                    </select>
+                                    {% if form.class_passed_in_2023.errors %}
+                                    <div class="error-message">
+                                        {% for error in form.class_passed_in_2023.errors %}
+                                        <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                    {% endif %}
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="inputprecentage" class="form-label">What is the percentage of marks obtained in the
+                                        last annual examination</label>
+                                    <input type="number" name="percentage_scored" class="form-control" id="inputprecentage"
+                                        value="{{ form.cleaned_data.percentage_scored }}" />
+                                    {% if form.percentage_scored.errors %}
+                                    <div class="error-message">
+                                        {% for error in form.percentage_scored.errors %}
+                                        <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="inputmedium" class="form-label">Language Medium</label>
+                                    <select class="form-select" name="language_medium" aria-label="Default select example"
+                                        value="{{ form.cleaned_data.language_medium }}">
+                                        <option selected>Choose</option>
+                                        <option value="English">English</option>
+                                        <option value="Hindi">Hindi</option>
+                                        <option value="Marathi">Marathi</option>
+                                        <option value="Bengali">Bengali</option>
+                                        <option value="Odia">Odia</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                    {% if form.language_medium.errors %}
+                                    <div class="error-message">
+                                        {% for error in form.language_medium.errors %}
+                                        <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                    {% endif %}
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="inputchoose" class="form-label">Why do you want to teach the student in this
+                                        school</label>
+                                    <input type="text" name="reason_for_choice" class="form-control" id="inputchoose"
+                                        value="{{ form.cleaned_data.reason_for_choice }}" />
+                                    {% if form.reason_for_choice.errors %}
+                                    <div class="error-message">
+                                        {% for error in form.reason_for_choice.errors %}
+                                        <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                           
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-success float-right">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</section>
+
 {% endblock %}

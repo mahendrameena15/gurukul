@@ -1,5 +1,6 @@
   {% load static %}
   <!-- Main Sidebar Container -->
+
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{% url 'dashboard' %}" class="brand-link">
@@ -18,99 +19,164 @@
           <a href="#" class="d-block">Mahesh Kumar</a>
         </div>
       </div>
-
+  
     
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item">
-            <a href="dashboard" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Dashboard
                
-              </p>
-            </a>
-          </li>
-          <li class="nav-header">MANAGE USERS</li>
-          <li class="nav-item">
-            <a href="users-list" class="nav-link">
-              <i class="nav-icon fa fa-users"></i>
-              <p>
-                Users List
-                <span class="badge badge-info right">2</span>
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="add-user" class="nav-link">
-              <i class="nav-icon fa fa-user"></i>
-              <p>
-                Add User
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="edit-user" class="nav-link">
-              <i class="nav-icon fa fa-user"></i>
-              <p>
-                Edit User
-              </p>
-            </a>
-          </li>
-          <li class="nav-header">MANAGE CATEGORIES</li>
-          <li class="nav-item">
-            <a href="category-list" class="nav-link">
-              <i class="nav-icon fa fa-cog"></i>
-              <p>
-                Categories List
-                <span class="badge badge-info right">2</span>
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="add-category" class="nav-link">
-              <i class="nav-icon fa fa-cog"></i>
-              <p>
-                Add Category
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="edit-category" class="nav-link">
-              <i class="nav-icon fa fa-cog"></i>
-              <p>
-                Edit Category
-              </p>
-            </a>
-          </li>
-          <li class="nav-header">MANAGE COURSES</li>
-          <li class="nav-item">
-            <a href="course-list" class="nav-link">
-              <i class="nav-icon fa fa-cog"></i>
-              <p>
-                Course List
-                <span class="badge badge-info right">2</span>
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="add-course" class="nav-link">
-              <i class="nav-icon fa fa-cog"></i>
-              <p>
-                Add Course
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="edit-course" class="nav-link">
-              <i class="nav-icon fa fa-cog"></i>
-              <p>
-                Edit Course
-              </p>
-            </a>
-          </li>
+              <li class="nav-item">
+                <a href="dashboard" class="nav-link ">
+                  <i class="nav-icon fas fa-tachometer-alt"></i>
+                  <p>
+                    DASHBOARD   
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item ">
+                <a href="#" class="nav-link active custom-bg" >
+                  <i class="nav-icon fa fa-users"></i>
+                  <p>
+                    MANAGE USERS
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="users-list" class="nav-link">
+                      <i class="nav-icon fa fa-user"></i>
+                      <p>
+                        Users List
+                        <span class="badge badge-info right">2</span>
+                      </p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="add-user" class="nav-link">
+                      <i class="nav-icon fa fa-user"></i>
+                      <p>
+                        Add User
+                      </p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="edit-user" class="nav-link">
+                      <i class="nav-icon fa fa-user"></i>
+                      <p>
+                        Edit User
+                      </p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              
+              <li class="nav-item">
+                <a href="#" class="nav-link active custom-bg">
+                  <i class="fa fa-phone mr-2"></i>
+                  <p>
+                    MANAGE CONTACTS
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="contact-list" class="nav-link">
+                      <i class="fa fa-phone mr-2"></i>
+                      <p>
+                         Contact List
+                        <!-- <span class="badge badge-info right">2</span> -->
+                      </p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="add-contact" class="nav-link">
+                      <i class="fa fa-phone mr-2"></i>
+                      <p>
+                        Add Contacts
+                      </p>
+                    </a>
+                  </li>
+                  
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link active custom-bg">
+                  <i class="fa fa-list-alt mr-2"></i>
+                  <p>
+                    MANAGE CATEGORIES
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="category-list" class="nav-link">
+                      <i class="fa fa-list-alt mr-2"></i>
+                      <p>
+                        Categories List
+                        <span class="badge badge-info right">2</span>
+                      </p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="add-category" class="nav-link">
+                      <i class="fa fa-list-alt mr-2"></i>
+                      <p>
+                        Add Category
+                      </p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="edit-category" class="nav-link">
+                      <i class="fa fa-list-alt mr-2"></i>
+                      <p>
+                        Edit Category
+                      </p>
+                    </a>
+                  </li>   
+                </ul>
+              </li>
+              
+          
+              <li class="nav-item">
+                <a href="#" class="nav-link active custom-bg">
+                  <i class="fas fa-book-open mr-2"></i>
+                  <p>
+                    MANAGE COURSES
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="course-list" class="nav-link">
+                      <i class="fas fa-book-open mr-2"></i>
+                      <p>
+                        Course List
+                        <span class="badge badge-info right">2</span>
+                      </p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="add-course" class="nav-link">
+                      <i class="fas fa-book-open mr-2"></i>
+                      <p>
+                        Add Course
+                      </p>
+                    </a>
+                  </li>
+          
+                  <li class="nav-item">
+                    <a href="edit-course" class="nav-link">
+                      <i class="fas fa-book-open mr-2"></i>
+                      <p>
+                        Edit Course
+                      </p>
+                    </a>
+                  </li> 
+                </ul>
+              </li>
+        
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

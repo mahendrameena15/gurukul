@@ -1,9 +1,153 @@
 {% extends 'common/base.html' %}
-
 {% block title %} {{page_title}} {% endblock %}
-
 {% block content %}
-  
 <h1>Edit Course</h1>
-  
+<!-- <section class="content">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card card-primary ">
+                <div class="card-header">
+                    <h3 class="card-title">Edit Course</h3>
+
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form method="POST" action="{% url 'edit-course'  %}" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="inputName">Title</label>
+                            <input type="text" id="inputName" name="title" class="form-control" value="{{ form.instance.title }}">
+                            {% if form.title.errors %}
+                                <div class="error-message">
+                                    {% for error in form.title.errors %}
+                                    <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            <label for="inputStatus">Courses</label>
+                            <select class="form-control" name="courses" aria-label="Default select example">
+                                <option selected>{{ form.instance.courses }}</option>
+                                <option value="Category 1">Category 1</option>
+                                <option value="Category 2">Category 2</option>
+                                <option value="Category 3">Category 3</option>
+                            </select>
+                            {% if form.courses.errors %}
+                                <div class="error-message">
+                                    {% for error in form.courses.errors %}
+                                    <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            <label for="inputClientCompany">Author</label>
+                            <input type="text" id="inputClientCompany" class="form-control" name="author" value="{{ form.instance.author }}">
+                            {% if form.author.errors %}
+                                <div class="error-message">
+                                    {% for error in form.author.errors %}
+                                    <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            <label for="inputimage">Image</label>
+                            <input type="file" name="picture" accept="image/*">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputDescription">Description</label>
+                            <textarea id="inputDescription" class="form-control" rows="4" name="description">{{ form.instance.description }}</textarea>
+                            {% if form.description.errors %}
+                                <div class="error-message">
+                                    {% for error in form.description.errors %}
+                                    <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            <label for="inputProjectLeader">Meta</label>
+                            <textarea id="json_data" name="meta" class="form-control" rows="4">{{ form.instance.meta }}</textarea>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-success float-right">Save</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+              
+            </div>
+           
+        </div>
+        <div class="col-md-6">
+            <div class="card card-primary ">
+                <div class="card-header">
+                    <h3 class="card-title">Edit SEO</h3>
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form method="POST" action="{% url 'edit-course' %}">
+                        {% csrf_token %} 
+                            <div class="form-group">
+                                <label for="inputMetaTitle">Meta Title</label>
+                                <input type="text" id="inputMetaTitle" name="meta_title" class="form-control"
+                                value="{{ form.cleaned_data.meta_title }}">
+                                {% if form.meta_title.errors %}
+                                    <div class="error-message">
+                                        {% for error in form.meta_title.errors %}
+                                        <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %} 
+                            </div>
+                            <div class="form-group">
+                                <label for="inputMetaDescription">Meta Description</label>
+                                <input type="text" id="inputMetaDescription" name="meta_description" class="form-control"
+                                value="{{ form.cleaned_data.meta_description }}">
+                                {% if form.meta_description.errors %}
+                                    <div class="error-message">
+                                        {% for error in form.meta_description.errors %}
+                                        <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %} 
+                            </div>
+                            <div class="form-group">
+                                <label for="inputMetaKeywords">Meta Keywords</label>
+                                <textarea id="json_data1" name="meta_keywords" class="form-control" rows="4"></textarea>
+                                {% if form.meta_keywords.errors %}
+                                    <div class="error-message">
+                                        {% for error in form.meta_keywords.errors %}
+                                        <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %} 
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-success float-right">Add</button>
+                                </div>
+                            </div>
+                    </form>
+                </div>   
+              
+            </div>
+        </div>
+    </div>
+
+
+</section> -->
+
 {% endblock %}

@@ -1,0 +1,62 @@
+{% extends 'common/base.html' %}
+{% block title %} {{page_title}} {% endblock %}
+{% block content %}
+<style>
+    .table td, .table th {
+      /* padding: .75rem; */
+      vertical-align: top;
+      border-top: 1px solid #dee2e6;
+      font-size: 14px;
+      text-align: center;
+      padding: 5px;
+  }
+  </style>
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Contact List</h3>
+              </div>
+            
+              <form method="GET" action="contact-list">
+                <div class="card-body">
+                    <table id="euserample2" class="table table-bordered table-hover">
+                      <thead>
+                      <tr>
+                        <th>Id</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Phone Number</th>
+                        <th>Message</th>
+                        
+                      </tr>
+                      </thead>
+                        <tbody>        
+                       
+                         {% for user in contact_list %}
+                          <tr>
+                            <td>{{user.id}}</td>
+                            <td>{{user.first_name}}</td>
+                            <td>{{user.last_name}}</td>
+                            <td>{{user.email}}</td>
+                            <td>{{user.phone_number}}</td>
+                            <td>{{user.message}}</td>
+                            
+                           
+                          </tr> 
+                          {% endfor %} 
+                         
+                        </tbody>
+                    </table>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+   
+{% endblock %}

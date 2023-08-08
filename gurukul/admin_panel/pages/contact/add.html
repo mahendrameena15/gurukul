@@ -1,0 +1,94 @@
+
+{% extends 'common/base.html' %}
+{% block title %} {{page_title}} {% endblock %}
+{% block content %}
+    <!-- Main content -->
+    <section class="content">
+
+      <!-- Default box -->
+      <div class="card">
+        <div class="card-body row">
+          <div class="col-5 text-center d-flex align-items-center justify-content-center">
+            <div class="">
+              <h2>Guru<strong>kul</strong></h2>
+              <p class="lead mb-5">Maluka Ved Vidyalaya, Shri Jadkhor
+                Godham, Via-Pahalwara, Post- Guhana, Dist- Bharatpur(Raj)<br>
+                Phone: +91 8619207496
+              </p>
+            </div>
+          </div>
+          <div class="col-7">
+            <form method="POST" action="add-contact" >
+            {% csrf_token %} 
+                <div class="form-group">
+                    <label for="inputFirstName">First Name</label>
+                    <input type="text" id="inputFirstName" name="first_name" placeholder="First Name" class="form-control" 
+                    value="{{ form.cleaned_data.first_name }}"/>
+                    {% if form.first_name.errors %}
+                        <div class="error-message">
+                            {% for error in form.first_name.errors %}
+                            <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    <label for="inputLastName">Last Name</label>
+                    <input type="text" id="inputLastName" name="last_name" placeholder="Last Name" class="form-control"
+                    value="{{ form.cleaned_data.last_name }}" />
+                    {% if form.last_name.errors %}
+                        <div class="error-message">
+                            {% for error in form.last_name.errors %}
+                            <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                <label for="inputEmail">E-Mail</label>
+                <input type="email" id="inputEmail" name="email" class="form-control" placeholder="E-mail"
+                 value="{{ form.cleaned_data.email }}" />
+                {% if form.email.errors %}
+                <div class="error-message">
+                        {% for error in form.email.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                </div>
+                <div class="form-group">
+                <label for="inputPhoneNumber">Phone Number</label>
+                <input type="text" id="inputPhoneNumber" name="phone_number" placeholder="Phone Number" class="form-control"
+                value="{{ form.cleaned_data.phone_number }}" />
+                {% if form.phone_number.errors %}
+                    <div class="error-message">
+                        {% for error in form.phone_number.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                </div>
+                <div class="form-group">
+                <label for="inputMessage">Message</label>
+                <textarea id="inputMessage" class="form-control" name="message" placeholder="Enter message" rows="4" value="{{ form.cleaned_data.message }}"></textarea>
+                {% if form.message.errors %}
+                    <div class="error-message">
+                        {% for error in form.message.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                </div>
+                <div class="form-group">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </section>
+{% endblock %}
+
+ 
+
