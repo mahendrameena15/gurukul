@@ -22,7 +22,7 @@
             
               <form method="GET" action="course-list">
                 <div class="card-body">
-                    <table id="euserample2" class="table table-bordered table-hover">
+                    <table id="ecourseample2" class="table table-bordered table-hover">
                       <thead>
                       <tr>
                         <th>Id</th>
@@ -32,26 +32,30 @@
                         <th>Picture</th>
                         <th>Description</th>
                         <th>Meta</th>
+                        <th>Update</th>
                       </tr>
                       </thead>
                         <tbody>        
                        
-                         {% for user in course_list %}
+                         {% for course in course_list %}
                           <tr>
-                            <td>{{user.id}}</td>
-                            <td>{{user.title}}</td>
-                            <td>{{user.courses}}</td>
-                            <td>{{user.author}}</td>
-                            <td>{{user.picture}}</td>
-                            <td>{{user.description}}</td>
-                            <td>{{user.meta}}</td>
-                           
+                            <td> {{course.id}}</td>
+                            <td>{{course.title}}</td>
+                            <td>{{course.courses}}</td>
+                            <td>{{course.author}}</td>
+                            <td>{{course.picture}}</td>
+                            <td>{{course.description}}</td>
+                            <td>{{course.meta}}</td>
+                            <td><a class="fcc-btn" href="{% url 'edit-course' course.id %}">Edit</a></td>
+                            
                           </tr> 
+                         
                           {% endfor %} 
                          
                         </tbody>
                     </table>
                 </div>
+                
               </form>
             </div>
           </div>

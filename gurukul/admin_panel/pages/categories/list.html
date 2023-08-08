@@ -9,7 +9,9 @@
       font-size: 14px;
       text-align: center;
       padding: 5px;
-  }
+    
+      }
+     
   </style>
     <section class="content">
       <div class="container-fluid">
@@ -22,7 +24,7 @@
             
               <form method="GET" action="category-list">
                 <div class="card-body">
-                    <table id="euserample2" class="table table-bordered table-hover">
+                    <table id="ecategoryample2" class="table table-bordered table-hover">
                       <thead>
                       <tr>
                         <th>Id</th>
@@ -32,20 +34,21 @@
                         <th>Picture</th>
                         <th>Description</th>
                         <th>Meta</th>
+                        <th>Update</th>
                       </tr>
                       </thead>
                         <tbody>        
                        
-                         {% for user in category_list %}
+                         {% for category in category_list %}
                           <tr>
-                            <td>{{user.id}}</td>
-                            <td>{{user.title}}</td>
-                            <td>{{user.category}}</td>
-                            <td>{{user.author}}</td>
-                            <td>{{user.picture}}</td>
-                            <td>{{user.description}}</td>
-                            <td>{{user.meta}}</td>
-                           
+                            <td>{{category.id}}</td>
+                            <td>{{category.title}}</td>
+                            <td>{{category.category}}</td>
+                            <td>{{category.author}}</td>
+                            <td>{{category.picture}}</td>
+                            <td>{{category.description}}</td>
+                            <td>{{category.meta}}</td>
+                            <td><a class="fcc-btn" href="{% url 'edit-category' category.id %}">Edit</a></td> 
                           </tr> 
                           {% endfor %} 
                          

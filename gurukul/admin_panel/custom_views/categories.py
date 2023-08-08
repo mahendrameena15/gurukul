@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,get_object_or_404
 from django.http import HttpResponse
 # Create your views here.
 from admin_panel.forms import CategoryForm
@@ -30,10 +30,32 @@ def add_category(request):
         return render(request, 'categories/add.html', context)
 
     
-def edit_category(request):
+def edit_category(request,id):
     page_title = "Edit Category"
-    context = {'page_title':page_title}
-    return render(request, 'categories/edit.html', context)
+    category = get_object_or_404(Category, pk=id)
+
+    if request.method == 'POST':
+        form = CategoryForm(request.POST, request.FILES, instance=category)
+        if form.is_valid():
+            category.title = form.cleaned_data['title']
+            category.category = form.cleaned_data['category']
+            category.author = form.cleaned_data['author']
+            category.description = form.cleaned_data['description']  
+            if 'picture' in request.FILES:
+                category.picture = request.FILES['picture']
+            meta_data = form.cleaned_data['meta']
+            if meta_data:
+                category.meta = meta_data
+            category.save()
+            return redirect('category-list')
+        else:
+            return render(request, 'categories/edit.html', {'form': form, 'form_errors': form.errors, 'page_title': page_title, 'category':category})
+    else:
+        form = CategoryForm(instance=category)
+        context = {'form': form, 'page_title': page_title, 'category':category}
+       
+        return render(request, 'categories/edit.html', context)
+
 
 def category_list(request):
     page_title = "Category List" 

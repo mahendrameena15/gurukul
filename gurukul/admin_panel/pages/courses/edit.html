@@ -1,8 +1,7 @@
 {% extends 'common/base.html' %}
 {% block title %} {{page_title}} {% endblock %}
 {% block content %}
-<h1>Edit Course</h1>
-<!-- <section class="content">
+<section class="content"> 
     <div class="row">
         <div class="col-md-6">
             <div class="card card-primary ">
@@ -16,11 +15,11 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="{% url 'edit-course'  %}" enctype="multipart/form-data">
+                    <form method="POST" action="{% url 'edit-course' course.id %}" enctype="multipart/form-data">
                         {% csrf_token %}
                         <div class="form-group">
                             <label for="inputName">Title</label>
-                            <input type="text" id="inputName" name="title" class="form-control" value="{{ form.instance.title }}">
+                            <input type="text" id="inputName" name="title" class="form-control" value="{{ course.title }}">
                             {% if form.title.errors %}
                                 <div class="error-message">
                                     {% for error in form.title.errors %}
@@ -32,7 +31,7 @@
                         <div class="form-group">
                             <label for="inputStatus">Courses</label>
                             <select class="form-control" name="courses" aria-label="Default select example">
-                                <option selected>{{ form.instance.courses }}</option>
+                                <option selected>{{ course.courses }}</option>
                                 <option value="Category 1">Category 1</option>
                                 <option value="Category 2">Category 2</option>
                                 <option value="Category 3">Category 3</option>
@@ -47,7 +46,7 @@
                         </div>
                         <div class="form-group">
                             <label for="inputClientCompany">Author</label>
-                            <input type="text" id="inputClientCompany" class="form-control" name="author" value="{{ form.instance.author }}">
+                            <input type="text" id="inputClientCompany" class="form-control" name="author" value="{{ course.author }}">
                             {% if form.author.errors %}
                                 <div class="error-message">
                                     {% for error in form.author.errors %}
@@ -58,11 +57,14 @@
                         </div>
                         <div class="form-group">
                             <label for="inputimage">Image</label>
-                            <input type="file" name="picture" accept="image/*">
+                            {% if course.picture %}
+                                <img src="{{ course.picture.url }}" alt="Course Image" class="existing-image">
+                            {% endif %}
+                            <input type="file" name="picture" accept="image/*" class="form-control-file" >
                         </div>
                         <div class="form-group">
                             <label for="inputDescription">Description</label>
-                            <textarea id="inputDescription" class="form-control" rows="4" name="description">{{ form.instance.description }}</textarea>
+                            <textarea id="inputDescription" class="form-control" rows="4" name="description">{{ course.description }}</textarea>
                             {% if form.description.errors %}
                                 <div class="error-message">
                                     {% for error in form.description.errors %}
@@ -73,11 +75,11 @@
                         </div>
                         <div class="form-group">
                             <label for="inputProjectLeader">Meta</label>
-                            <textarea id="json_data" name="meta" class="form-control" rows="4">{{ form.instance.meta }}</textarea>
+                            <textarea id="json_data" name="meta" class="form-control" rows="4">{{ course.meta }}</textarea>
                         </div>
                         <div class="row">
                             <div class="col-12">
-                                <button type="submit" class="btn btn-success float-right">Save</button>
+                                <button type="submit" class="btn btn-success float-right">Save Changes</button>
                             </div>
                         </div>
                     </form>
@@ -87,7 +89,7 @@
             </div>
            
         </div>
-        <div class="col-md-6">
+        <!-- <div class="col-md-6"> 
             <div class="card card-primary ">
                 <div class="card-header">
                     <h3 class="card-title">Edit SEO</h3>
@@ -97,8 +99,8 @@
                         </button>
                     </div>
                 </div>
-                <div class="card-body">
-                    <form method="POST" action="{% url 'edit-course' %}">
+                <div class="card-body"> 
+                    <form method="POST" action="{% url 'edit-course' course.id %}">
                         {% csrf_token %} 
                             <div class="form-group">
                                 <label for="inputMetaTitle">Meta Title</label>
@@ -141,13 +143,13 @@
                                 </div>
                             </div>
                     </form>
-                </div>   
+                </div>    
               
             </div>
-        </div>
+        </div>  -->
     </div>
 
 
-</section> -->
+</section> 
 
 {% endblock %}
