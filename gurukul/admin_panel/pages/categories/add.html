@@ -31,8 +31,8 @@
                         </div>
                         <div class="form-group">
                             <label for="inputStatus">Categories</label>
-                            <select class="form-control" name="category" aria-label="Default select example" value="{{ form.cleaned_data.category }}">
-                                <option selected>Select one</option>
+                            <select class="form-control" name="category" aria-label="Default select example">
+                                <option selected>{{ form.cleaned_data.category }}</option>
                                 <option value="Category 1">Category 1</option>
                                 <option value="Category 2">Category 2</option>
                                 <option value="Category 3">Category 3</option>
@@ -58,7 +58,8 @@
                         </div>
                         <div class="form-group">
                             <label for="inputimage">Image</label>
-                            <input type="file" name="picture" accept="image/*">
+                           
+                            <input type="file" name="picture" accept="image/*" value="{{ form.cleaned_data.picture }}" >
                             <!-- {% if form.image.errors %}
                                 <div class="error-message">
                                     {% for error in form.image.errors %}
@@ -69,7 +70,7 @@
                         </div>
                         <div class="form-group">
                             <label for="inputDescription">Description</label>
-                            <textarea id="inputDescription" class="form-control" rows="4" name="description" value="{{ form.cleaned_data.description }}"></textarea>
+                            <textarea id="inputDescription" class="form-control" rows="4" name="description">{{ form.cleaned_data.description }}</textarea>
                             {% if form.description.errors %}
                                 <div class="error-message">
                                     {% for error in form.description.errors %}
@@ -80,7 +81,7 @@
                         </div>
                         <div class="form-group">
                             <label for="inputProjectLeader">Meta</label>
-                            <textarea id="json_data" name="meta" class="form-control" rows="4"></textarea>
+                            <textarea id="json_data" name="meta" class="form-control" rows="4">{{ form.cleaned_data.meta }}</textarea>
                             <!-- {% if form.meta.errors %}
                             <div class="error-message">
                                 {% for error in form.meta.errors %}
