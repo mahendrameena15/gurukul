@@ -1395,3 +1395,22 @@ table.activities-table-inner thead {
     color: red;
     font-size: 14px;
 }
+.privacy-policy p {
+    padding: 5px 0px;
+}
+
+.privacy-policy h3 {
+    padding-top: 20px;
+}
+
+
+
+.privacy-policy li {
+    list-style: none;
+}
+
+.privacy-policy li::before {
+    content: "\00BB";
+    padding-right: 10px;
+    font-size: 20px;
+}

@@ -57,6 +57,14 @@ def class_routine(request):
     page_title = "Class Routine"
     context = {'page_title':page_title}
     return render(request, 'class-routine.html', context)
+def condition(request):
+    page_title = "Terms & Condition"
+    context = {'page_title':page_title}
+    return render(request, 'condition.html', context)
+def privacy(request):
+    page_title = "Privacy-Policy"
+    context = {'page_title':page_title}
+    return render(request, 'privacy-policy.html', context)
 def thankyou(request):
     page_title = "Thankyou"
     context = {'page_title':page_title}

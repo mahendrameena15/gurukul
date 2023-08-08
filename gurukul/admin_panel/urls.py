@@ -41,6 +41,7 @@ urlpatterns = [
     path('category-list',categories.category_list, name='category-list'),
     #Courses
     path('add-course', courses.add_course, name='add-course'),
+     path('edit-course/<int:id>/', courses.add_course, name='edit-course'),
     path('course-list',courses.course_list, name='course-list'),
     path('edit-course',courses.edit_course, name='edit-course'),
 

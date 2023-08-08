@@ -1,15 +1,21 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,get_object_or_404
 from django.http import HttpResponse
 from admin_panel.forms import CourseForm
 from admin_panel.models import Course
 from django.shortcuts import get_object_or_404
 
-def add_course(request):
+def add_course(request,id=None):
     page_title = "Add Course"
+    course = get_object_or_404(Course, pk=id) if course_id else None
+    # if id:
+    #     course = Course.objects.get(pk=id)
+    # else:
+    #     course = None
+    
     if request.method == 'POST':
         # import pdb;
         # pdb.set_trace()
-        form = CourseForm(request.POST,request.FILES)
+        form = CourseForm(request.POST,request.FILES,instance=course)
         if form.is_valid():    
             add_course=Course(
             title = form.cleaned_data['title'],
@@ -22,12 +28,12 @@ def add_course(request):
             if meta_data:
                 add_course.meta = meta_data
             add_course.save()         
-            return redirect('success')
+            return redirect('add-course')
         else:  
-            return render(request, 'courses/add.html', {'form': form, 'form_errors': form.errors,'page_title':page_title}) 
+            return render(request, 'courses/add.html', {'form': form, 'form_errors': form.errors,'page_title':page_title,'course': course}) 
     else: 
         form = CourseForm()
-        context = {'form': form, 'page_title': page_title}
+        context = {'form': form, 'page_title': page_title,'course': course}
         return render(request, 'courses/add.html', context)
 
 def course_list(request):

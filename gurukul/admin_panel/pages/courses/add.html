@@ -20,7 +20,7 @@
                         <div class="form-group">
                             <label for="inputName">Title</label>
                             <input type="text" id="inputName" name="title" class="form-control"
-                            value="{{ form.cleaned_data.title }}">
+                            value="{{ form.cleaned_data.title }}" readonly disabled>
                             {% if form.title.errors %}
                                 <div class="error-message">
                                     {% for error in form.title.errors %}
@@ -31,7 +31,7 @@
                         </div>
                         <div class="form-group">
                             <label for="inputStatus">Courses</label>
-                            <select class="form-control" name="courses" aria-label="Default select example" value="{{ form.cleaned_data.courses }}">
+                            <select class="form-control" name="courses" aria-label="Default select example" value="{{ form.cleaned_data.courses }}" readonly disabled>
                                 <option selected>Select one</option>
                                 <option value="Category 1">Category 1</option>
                                 <option value="Category 2">Category 2</option>
@@ -47,7 +47,7 @@
                         </div>
                         <div class="form-group">
                             <label for="inputClientCompany">Author</label>
-                            <input type="text" id="inputClientCompany" class="form-control" name="author" value="{{ form.cleaned_data.author }}">
+                            <input type="text" id="inputClientCompany" class="form-control" name="author" value="{{ form.cleaned_data.author }}" readonly disabled>
                             {% if form.author.errors %}
                                 <div class="error-message">
                                     {% for error in form.author.errors %}
@@ -69,7 +69,7 @@
                         </div>
                         <div class="form-group">
                             <label for="inputDescription">Description</label>
-                            <textarea id="inputDescription" class="form-control" rows="4" name="description" value="{{ form.cleaned_data.description }}"></textarea>
+                            <textarea id="inputDescription" class="form-control" rows="4" name="description" value="{{ form.cleaned_data.description }}" readonly disabled></textarea>
                             {% if form.description.errors %}
                                 <div class="error-message">
                                     {% for error in form.description.errors %}
@@ -80,7 +80,7 @@
                         </div>
                         <div class="form-group">
                             <label for="inputProjectLeader">Meta</label>
-                            <textarea id="json_data" name="meta" class="form-control" rows="4"></textarea>
+                            <textarea id="json_data" name="meta" class="form-control" rows="4" readonly disabled></textarea>
                             <!-- {% if form.meta.errors %}
                             <div class="error-message">
                                 {% for error in form.meta.errors %}
@@ -91,6 +91,8 @@
                         </div>
                         <div class="row">
                             <div class="col-12">
+                                <button type="button" id="editButton" class="btn btn-primary float-right">Edit</button>
+                                <button type="submit" class="btn btn-success float-right" id="submitButton" style="display: none;">Save Changes</button>
                                 <button type="submit" class="btn btn-success float-right">Add</button>
                             </div>
                         </div>
@@ -150,6 +152,9 @@
                             </div>
                             <div class="row">
                                 <div class="col-12">
+                                    <!-- <button type="button" id="editButton" class="btn btn-primary float-right">Edit</button>
+                                    <button type="submit" class="btn btn-success float-right" id="submitButton" style="display: none;">Save Changes</button> -->
+
                                     <button type="submit" class="btn btn-success float-right">Add</button>
                                 </div>
                             </div>
@@ -162,5 +167,24 @@
 
 
 </section>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const editButton = document.getElementById('editButton');
+        const submitButton = document.getElementById('submitButton');
+        const formElements = document.querySelectorAll('.form-control');
+
+        editButton.addEventListener('click', function () {
+            // Toggle visibility of buttons
+            editButton.style.display = 'none';
+            submitButton.style.display = 'block';
+
+            // Enable form elements for editing
+            formElements.forEach(function (element) {
+                element.removeAttribute('readonly');
+                element.removeAttribute('disabled');
+            });
+        });
+    });
+</script>
 
 {% endblock %}
