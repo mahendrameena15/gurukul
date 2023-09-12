@@ -1,6 +1,7 @@
 {% extends 'common/base.html' %}
 {% block title %} {{page_title}} {% endblock %}
 {% block content %}
+
 <section class="content"> 
     <div class="row">
         <div class="col-md-6">
@@ -14,6 +15,7 @@
                         </button>
                     </div>
                 </div>
+                
                 <div class="card-body">
                     <form method="POST" action="{% url 'edit-category' category.id %}" enctype="multipart/form-data">
                         {% csrf_token %}

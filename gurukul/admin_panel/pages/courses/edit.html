@@ -1,6 +1,8 @@
 {% extends 'common/base.html' %}
 {% block title %} {{page_title}} {% endblock %}
 {% block content %}
+
+
 <section class="content"> 
     <div class="row">
         <div class="col-md-6">
@@ -64,7 +66,7 @@
                         </div>
                         <div class="form-group">
                             <label for="inputDescription">Description</label>
-                            <textarea id="inputDescription" class="form-control" rows="4" name="description">{{ course.description }}</textarea>
+                            <textarea id="inputDescription" class="form-control-file" rows="4" name="description">{{ course.description }}</textarea>
                             {% if form.description.errors %}
                                 <div class="error-message">
                                     {% for error in form.description.errors %}
